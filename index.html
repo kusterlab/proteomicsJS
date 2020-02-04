@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+svg {
+	font: 10px sans-serif;
+}
+    .bar rect {
+	    fill: steelblue;
+	    shape-rendering: crispEdges;
+    }
+    .axis path, .axis line {
+	    fill: none;
+	    stroke: #000;
+	    shape-rendering: crispEdges;
+    }
+    .line {
+	    fill: none;
+	    stroke: purple;
+	    stroke-width: 1.5px;
+    }
+</style>
+<body>
+	<script src="//d3js.org/d3.v3.min.js"></script>
+	<script src="//cdn.jsdelivr.net/jstat/1.5.2/jstat.min.js"></script>
+	<script src="bundle.js"></script>
+	<script>
+		//Set dimensions
+		var m = {top: 50, right: 50, bottom: 50, left: 50}
+	, h = 500 - m.top - m.bottom
+	, w = 960 - m.left - m.right
+	, numBins = 100;
+
+	console.log(abc);
+//Using a fixed data set for demo, rather than random generated values
+//TODO - update fixed data set later with a larger dataset for demo/testing (and
+// feed in via d3.csv() or d3.json() )
+var dataset = [2.4059769174850905, 2.7600000000000002, 3.8217080187144488,
+	2.3899284588203313, 3.7264403738739054, 7.63, 3.16, 3.1600000000000006,
+	3.160000000000001, 2.06, 1.9728802107932477, 1.7180599494369857,
+	1.747203022782844, 2.39, 2.06, 2.06];
+abc.then(function(dataset){
+var xScale = d3.scale.linear().domain([0, 1]).range([0, w]);
+var data = d3.layout.histogram().bins(xScale.ticks(numBins))(dataset);
+
+/* now update histogram bins to be cumulative to make cumulative histogram
+ *
+ * FYI: a cumulative histogram is a mapping that counts the cumulative number of
+ * observations in all of the bins up to the specified bin.
+ *
+ * The cumulative bin frequency pattern should roughly match the CDF line?
+ * Can compare with Python's Matplotlib cumulative histogram e.g.
+ * import matplotlib.pyplot as plt
+ * plt.hist(dataset, bins=(0,1,2,3,4,5,6,7,8,9), normed=True, cumulative=True)
+ * plt.title("Cumulative Histogram")
+ * plt.xlabel("Distance")
+ * plt.ylabel("Probability")
+ * plt.savefig("Cumulative Histogram.png", bbox_inches='tight')
+ */
+
+//for(var i = 1; i < data.length; i++){
+//	data[i].y += data[i-1].y;
+//}
+
+/* Calculative CDF using jStat - https://github.com/jstat/jstat
+ * We are replicating cumulative distribution/frequency line option that is
+ * available in Excel histograms
+ *
+ * Can validate CDF by calculating each percentile tick/unit (0.1-0.9 or 10-90th
+ * percentiles) against the dataset then comparing the resulting value against
+ * the matching value on the histogram. It should roughly match up if we are
+ * expecting Excel-like output. We can test this assertion by (1) loading same
+ * dataset used with Excel to here using d3.csv() and comparing histograms
+ * between the two, or (2) manually enter this sample dataset here into Excel to
+ * plot a histogram with CDF line then compare the two histograms.
+ */
+var jstat = this.jStat(dataset);
+for(var i=0; i < data.length; i++){
+	data[i]['cum'] = jstat.normal(jstat.mean(), jstat.stdev()).cdf(data[i].x);
+}
+
+//Axes and scales
+var yhist = d3.scale.linear()
+	.domain([0, d3.max(data, function(d) { return d.y; })])
+	.range([h, 0]);
+
+var ycum = d3.scale.linear().domain([0, 1]).range([h, 0]);
+
+var xAxis = d3.svg.axis()
+	.scale(xScale)
+	.orient('bottom');
+
+var yAxis = d3.svg.axis()
+	.scale(yhist)
+	.orient('left');
+
+var yAxis2 = d3.svg.axis()
+	.scale(ycum)
+	.orient('right');
+
+//Draw svg
+console.log("test");
+var svg = d3.select("body").append("svg")
+	.attr("width", w + m.left + m.right)
+	.attr("height", h + m.top + m.bottom)
+	.append("g")
+	.attr("transform", "translate(" + m.left + "," + m.top + ")");
+
+//Draw histogram
+var bar = svg.selectAll(".bar")
+	.data(data)
+	.enter().append("g")
+	.attr("class", "bar")
+	.attr("transform", function(d) { return "translate(" + xScale(d.x) + "," + yhist(d.y) + ")"; });
+
+bar.append("rect")
+	.attr("x", 1)
+	.attr("width", w/numBins/1.3)
+	.attr("height", function(d) { return h - yhist(d.y); });
+
+//Draw CDF line
+var guide = d3.svg.line()
+	.x(function(d){ return xScale(d.x) })
+	.y(function(d){ return ycum(d.cum) })
+	.interpolate('basis');
+
+var line = svg.append('path')
+	.datum(data)
+	.attr('d', guide)
+	.attr('class', 'line');
+
+//Draw axes
+svg.append("g")
+	.attr("class", "x axis")
+	.attr("transform", "translate(0," + h + ")")
+	.call(xAxis);
+
+svg.append("g")
+	.attr("class", "y axis")
+	.call(yAxis)
+	.append("text")
+	.attr("transform", "rotate(-90)")
+	.attr("y", 6)
+	.attr("dy", ".71em")
+	.style("text-anchor", "end")
+	.text("Count (Histogram)");
+
+svg.append("g")
+	.attr("class", "y axis")
+	.attr("transform", "translate(" + [w, 0] + ")")
+	.call(yAxis2)
+	.append("text")
+	.attr("transform", "rotate(-90)")
+	.attr("y", 4)
+	.attr("dy", "-.71em")
+	.style("text-anchor", "end")
+	.text("CDF");
+});
+	</script>
+</body>

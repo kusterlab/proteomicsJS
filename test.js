@@ -3,7 +3,7 @@ if (typeof fetch !== 'function') {
 }
 
 
-var d3 = require("d3");
+var d3v4 = require("d3");
 console.log("test");
 
 spectrum1 = [[1, 2],[2, 4]]
@@ -20,15 +20,18 @@ URL = "https://www.proteomicsdb.org/logic/api/getReferenceSpectrum.xsjs?sequence
 
 console.log("works");
 
-postbody = {"sequence": ["TDLHAFENLEIIR", "TDLHAFENLEIIR"], "charge": [2, 3], "ce": [25, 30]};
+postbody = {"sequence": ["TDLHAFENLEIIR"], "charge": [2], "ce": [25], "mods":[""]};
+console.log(postbody);
+
 //console.log(postbody);
 
 
-
-//    d3.json('https://www.proteomicsdb.org/logic/api/getFragmentationPrediction.xsjs', {
-//	          method:"post",
-//	          body: JSON.stringify(postbody)}).then(json => console.log(json));
-
+    d3v4.json('https://www.proteomicsdb.org/logic/api/getFragmentationPrediction.xsjs', {
+	          method:"POST",
+          body: JSON.stringify(postbody)}).then(json => console.log(json))
+					.catch(function () {
+						     console.log("Promise Rejected");
+					});
 
 
 // EQUAL OPERATOR

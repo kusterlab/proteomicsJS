@@ -4,13 +4,17 @@
   "description": "",
   "main": "test.js",
   "dependencies": {
-    "d3": "^5.15.0",
+    "d3": "^5.0.0",
     "fetch": "^1.1.0",
+    "g": "^2.0.1",
+    "jstat": "^1.9.2",
     "node-fetch": "^2.6.0",
-    "node-fetch-polyfill": "^2.0.6"
+    "node-fetch-polyfill": "^2.0.6",
+    "uniq": "^1.0.1",
+    "watchify": "^3.11.1"
   },
   "devDependencies": {
-    "mocha": "^7.0.0"
+    "mocha": "^7.0.1"
   },
   "scripts": {
     "test": "mocha"
