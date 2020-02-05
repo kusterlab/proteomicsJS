@@ -280,6 +280,9 @@ var ipsa_helper = {
 		mz_value1 = spectrum_1.map(x => x["mz"])
 		mz_value2 = spectrum_2.map(x => x["mz"])
 		mz_set = [...new Set(mz_value1.concat(mz_value2))]
+				mz_set = mz_value2 // TODO explain why this is not the exact case
+
+
 		aligned_spectrum = mz_set.map(z) // fill with 0
 		aligned_spectrum2 = aligned_spectrum.reduce(reduce_aligned_spectrum_to_comparison_in,{"intensity_1": [], "intensity_2": []})
 		return(aligned_spectrum2)
