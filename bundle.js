@@ -281,6 +281,9 @@ var ipsa_helper = {
 		mz_value1 = spectrum_1.map(x => x["mz"])
 		mz_value2 = spectrum_2.map(x => x["mz"])
 		mz_set = [...new Set(mz_value1.concat(mz_value2))]
+				mz_set = mz_value2 // TODO explain why this is not the exact case
+
+
 		aligned_spectrum = mz_set.map(z) // fill with 0
 		aligned_spectrum2 = aligned_spectrum.reduce(reduce_aligned_spectrum_to_comparison_in,{"intensity_1": [], "intensity_2": []})
 		return(aligned_spectrum2)
@@ -395,12 +398,34 @@ offset=1
  * @param {integer} offset - How many amino acids to keep
  *
  */
-randomizer = function(peptide,offset){
+randomizer_b = function(peptide,offset){
 	pepl=peptide.length
+	// get array with amino acid idx
 	all_pepidxs=Array.from(new Array(pepl), (x,i) => i)
-	pepidxs=Array.from(new Array(pepl -offset *2), (x,i) => i + offset)
+	// get index with allowed poistions
+	pepidxs=Array.from(new Array(pepl -offset ), (x,i) => i + offset)
+	//shuffle
 	pepidxs_shuffle=d3v4.shuffle(pepidxs)
 	//	console.log(pepidxs)
+
+
+	pepidxs_concat=all_pepidxs.slice(0,offset).concat(pepidxs_shuffle)
+	chars = peptide.split('')
+	new_chars = pepidxs_concat.map(x => chars[x])
+	new_peptide=new_chars.join('')
+
+	return new_peptide
+}
+randomizer = function(peptide,offset){
+	pepl=peptide.length
+	// get array with amino acid idx
+	all_pepidxs=Array.from(new Array(pepl), (x,i) => i)
+	// get index with allowed poistions
+	pepidxs=Array.from(new Array(pepl -offset *2), (x,i) => i + offset)
+	//shuffle
+	pepidxs_shuffle=d3v4.shuffle(pepidxs)
+	//	console.log(pepidxs)
+
 
 	pepidxs_concat=all_pepidxs.slice(0,offset).concat(pepidxs_shuffle.concat(all_pepidxs.slice(-offset)))
 	chars = peptide.split('')
@@ -414,6 +439,7 @@ var postbody = {"sequence": [], "charge": [], "ce": [], "mods":[]};
 
 x = [...Array(1000)].map(x => randomizer(peptide, offset))
 y = uniq(x)
+console.log(y)
 var charge = 2;
 var ce = 30;
 var mods = "";
@@ -1042,7 +1068,7 @@ abc =d3v4.json('https://www.proteomicsdb.org/logic/api/getFragmentationPredictio
 
 console.log(y.length)
 
-exports.randomizer = randomizer
+exports.randomizer = randomizer_b
 
 
 
