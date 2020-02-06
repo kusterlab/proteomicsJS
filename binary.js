@@ -1,6 +1,6 @@
 // [{"mz": v1, "intensity": v2}, ...]
 // TODO needs a sorted array
-function binarySearch(arr,target){
+var binarySearch = function(arr,target){
 	var midpoint = Math.floor(arr.length/2);
 
 	if (arr[midpoint] === target){
@@ -17,7 +17,7 @@ function binarySearch(arr,target){
 	}
 }
 
-function binarySearch_spec(arr,target){
+var binarySearch_spec = function(arr,target){
 	var midpoint = Math.floor(arr.length/2);
 
 	if (arr[midpoint]["mz"] == target){
@@ -36,7 +36,7 @@ function binarySearch_spec(arr,target){
 	}
 }
 
-sorter = function(attribute, type){ 
+var my_sorter = function(attribute, type){ 
 	return function(peak1, peak2){
 		if (peak1[attribute] > peak2[attribute]) {
 			return type==="asc"?1:-1;
@@ -48,8 +48,8 @@ sorter = function(attribute, type){
 	}
 }
 
-sorter_asc = sorter("mz", "asc")
-sorter_asc_intensity = sorter("intensity", "desc")
+var sorter_asc = my_sorter("mz", "asc")
+var sorter_asc_intensity = my_sorter("intensity", "desc")
 
 spectrum = [{"mz":1019.74, "intensity": 1000000000},
 	{"mz":326.1, "intensity": 122095.0},
@@ -65,10 +65,12 @@ spec1 =  Object.assign([], spectrum);
 spec1.push({"mz": 400, "intensity": 12})
 
 spectrum_intensity = spec1.sort(sorter_asc_intensity)
-console.log(spectrum)
-console.log(spectrum_intensity)
 
-compare_ppm = function(peak1, peak2, ppm){
+/*
+ *peak 1 is always reference (we assume the bottom/predicted one
+ * checking for smaller or greater not equal case
+ */
+exports.compare_ppm = function(peak1, peak2, ppm){
 	// asking if peak2 is close to peak1
 	error = 1 / Math.pow(10, 6) * ppm * peak1["mz"]
 	return(peak2["mz"] < peak1["mz"] + error && peak2["mz"] > peak1["mz"] - error)
@@ -77,7 +79,7 @@ compare_ppm = function(peak1, peak2, ppm){
 f_peak = function(peak){
 	console.log(peak["mz"])
 	a = binarySearch_spec(spectrum, peak["mz"])
-	is_inside = compare_ppm(a, peak, 20)
+	is_inside = exports.compare_ppm(a, peak, 20)
 	console.log(is_inside)
 	if(is_inside){
 		if(peak["exp_intensity"] < a["intensity"]){
@@ -105,3 +107,11 @@ extract_mzs = function(prev, peak){
 zz = spectrum_intensity.map(add_exp_flag).map(f_peak).reduce(extract_mzs, {"intensity_1":[], "intensity_2":[]})
 
 console.log(zz);
+
+var foo = {};
+
+foo.greet = function(){
+	    console.log('Hello from Foo!');
+}
+
+foo.greet();
