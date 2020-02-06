@@ -4,16 +4,26 @@
   "description": "",
   "main": "test.js",
   "dependencies": {
-    "d3": "^5.15.0",
+    "d3": "^5.0.0",
     "fetch": "^1.1.0",
+    "g": "^2.0.1",
+    "jstat": "^1.9.2",
     "node-fetch": "^2.6.0",
-    "node-fetch-polyfill": "^2.0.6"
+    "node-fetch-polyfill": "^2.0.6",
+    "nyc": "^15.0.0",
+    "uniq": "^1.0.1",
+    "watchify": "^3.11.1"
   },
   "devDependencies": {
-    "mocha": "^7.0.0"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "mocha": "^7.0.1"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "nyc mocha  --recursive",
+    "test_watch": "mocha --recursive -w",
+    "lint": "eslint --ext js --fix ./test"
   },
   "author": "",
   "license": "ISC"
