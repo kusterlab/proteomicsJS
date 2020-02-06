@@ -17,8 +17,8 @@
     "mocha": "^7.0.1"
   },
   "scripts": {
-    "test": "mocha  --recursive -w",
-    "test_watch": "mocha --recursive"
+    "test": "mocha  --recursive",
+    "test_watch": "mocha --recursive -w"
   },
   "author": "",
   "license": "ISC"
