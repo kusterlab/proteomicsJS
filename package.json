@@ -10,6 +10,7 @@
     "jstat": "^1.9.2",
     "node-fetch": "^2.6.0",
     "node-fetch-polyfill": "^2.0.6",
+    "nyc": "^15.0.0",
     "uniq": "^1.0.1",
     "watchify": "^3.11.1"
   },
@@ -20,7 +21,7 @@
     "mocha": "^7.0.1"
   },
   "scripts": {
-    "test": "mocha  --recursive",
+    "test": "nyc mocha  --recursive",
     "test_watch": "mocha --recursive -w",
     "lint": "eslint --ext js --fix ./test"
   },

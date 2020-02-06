@@ -6,6 +6,8 @@ npm install
 ```
 
 [![pipeline status](https://gitlab.lrz.de/prdb/isv_tools/IPSA_helper/badges/master/pipeline.svg)](https://gitlab.lrz.de/prdb/isv_tools/IPSA_helper/commits/master)
+[![coverage report](https://gitlab.lrz.de/prdb/isv_tools/IPSA_helper/badges/master/coverage.svg)](https://gitlab.lrz.de/prdb/isv_tools/IPSA_helper/commits/master)
+
 
 
 ```
