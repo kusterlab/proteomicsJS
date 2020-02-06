@@ -25,29 +25,33 @@ describe('utils strategies', function(){
 			it('generate spectra')
 		});
 		describe('sorter 1312312331', function(){
+			var spectrum;
 			beforeEach(function() {
 
-				spectrum = [{"mz":1019.74, "intensity": 1000000000},
+			spectrum = [{"mz":1019.74, "intensity": 1000},
 					{"mz":326.1, "intensity": 122095.0},
 					{"mz":326.12, "intensity": 111771.0},
 					{"mz":351.1, "intensity": 60817.0},
-					{"mz":354.1, "intensity": 94638.0},
+					{"mz":354.1, "intensity": 9004638.0},
 					{"mz":358.3, "intensity": 69098.0},
 					{"mz":361.3, "intensity": 96982.0},
 					{"mz":368.0, "intensity": 80302.0}]
 
 			});
 			it('sort mz', function(){
-				var sorter_asc_mz = sorter("mz", "asc");
-				foo.greet(); //ReferenceError, foo is not defined
+				var sorter_asc_mz = binary.my_sorter("mz", "asc");
 
-				assert.equal(0, spectrum);
 
-				var spectrum = spectrum.sort(sorter_asc_mz)
-				assert.equal(326.1, spectrum[0]["mz"]);
+				var spectrum123 = spectrum.sort(sorter_asc_mz)
+				assert.equal(326.1, spectrum123[0]["mz"]);
 
 			});
-			it('sort intensity');
+			it('sort intensity', function(){
+				var sorter_asc_intensity = binary.my_sorter("intensity", "desc")
+				var spectrum123 = spectrum.sort(sorter_asc_intensity)
+				assert.equal(354.1, spectrum123[0]["mz"]);
+				assert.equal(9004638.0, spectrum123[0]["intensity"]);
+			});
 		})
 	})
 });

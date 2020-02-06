@@ -51,7 +51,7 @@ var my_sorter = function(attribute, type){
 var sorter_asc = my_sorter("mz", "asc")
 var sorter_asc_intensity = my_sorter("intensity", "desc")
 
-spectrum = [{"mz":1019.74, "intensity": 1000000000},
+var spectrum = [{"mz":1019.74, "intensity": 1000000000},
 	{"mz":326.1, "intensity": 122095.0},
 	{"mz":326.12, "intensity": 111771.0},
 	{"mz":351.1, "intensity": 60817.0},
@@ -60,7 +60,7 @@ spectrum = [{"mz":1019.74, "intensity": 1000000000},
 	{"mz":361.3, "intensity": 96982.0},
 	{"mz":368.0, "intensity": 80302.0}]
 
-spectrum = spectrum.sort(sorter_asc)
+var spectrum = spectrum.sort(sorter_asc)
 spec1 =  Object.assign([], spectrum);
 spec1.push({"mz": 400, "intensity": 12})
 
@@ -75,6 +75,7 @@ exports.compare_ppm = function(peak1, peak2, ppm){
 	error = 1 / Math.pow(10, 6) * ppm * peak1["mz"]
 	return(peak2["mz"] < peak1["mz"] + error && peak2["mz"] > peak1["mz"] - error)
 }
+exports.my_sorter = my_sorter
 
 f_peak = function(peak){
 	console.log(peak["mz"])
