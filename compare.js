@@ -360,6 +360,7 @@ var ipsa_helper = {
 	}
 
 }
+/*
 a = ipsa_helper["binning"](spectrum_1)
 b = ipsa_helper["binning"](spectrum_2)
 console.log(a.length)
@@ -377,6 +378,7 @@ console.log(e)
 console.log(f)
 console.log(g)
 console.log(h)
+*/
 exports.ipsa_helper = ipsa_helper
 // console.log(ipsa_helper["binning"](spectrum_1))
 //console.log(ipsa_helper["comparison"]["dot_product"](spectrum_1, spectrum_2))

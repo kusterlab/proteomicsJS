@@ -14,11 +14,15 @@
     "watchify": "^3.11.1"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
     "mocha": "^7.0.1"
   },
   "scripts": {
     "test": "mocha  --recursive",
-    "test_watch": "mocha --recursive -w"
+    "test_watch": "mocha --recursive -w",
+    "lint": "eslint --ext js --fix ./test"
   },
   "author": "",
   "license": "ISC"
