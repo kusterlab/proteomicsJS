@@ -199,7 +199,7 @@ abc.then(function(dataset){
 	console.log("ecdf_data");
 	console.log(ecdf_data);
 
-	var CUTOFF = 0.05
+	var CUTOFF = 0.1
 	svg.selectAll(".dot")
 		.data(ecdf_data)
 		.enter()
@@ -278,8 +278,9 @@ predict = predict_wrapper(model);
 		.attr('class', 'interpolation')
 		.attr('stroke', "orange")
 		.attr('stroke-width', 4);
-
-	var POINT = [Math.pow(10, predict(Math.log10(0.82))["y_predicted"])]
+	
+	var BEST_HIT = 0.99
+	var POINT = [Math.pow(10, predict(Math.log10(BEST_HIT))["y_predicted"])]
 	console.log("POINT");
 	console.log(POINT);
 	svg.selectAll(".dotp")
@@ -289,7 +290,7 @@ predict = predict_wrapper(model);
 		.attr("class", "dot")
 		.style("fill", "red") 
 		.attr("cx", function(d) {
-			return xScale(0.82);
+			return xScale(BEST_HIT);
 		})
 		.attr("cy", function(d) {
 			return ycum(d);

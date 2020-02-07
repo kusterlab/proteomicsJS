@@ -3,7 +3,7 @@ d3v4 = require('d3')
 uniq = require('uniq')
 stuff = require('./compare.js')
 peptide="YLDGLTAER"
-offset=1
+offset=2
 
 
 /**
@@ -56,7 +56,7 @@ x = [...Array(1000)].map(x => randomizer(peptide, offset))
 y = uniq(x)
 console.log(y)
 var charge = 2;
-var ce = 30;
+var ce = 40;
 var mods = "";
 function reducer(total, el){
 	total["sequence"].push(el);
@@ -671,7 +671,8 @@ abc =d3v4.json('https://www.proteomicsdb.org/logic/api/getFragmentationPredictio
 		return e.map( el => {
 			var pred_spec = stuff.ipsa_helper["binning"](el.ions);
 			var mergedSpectrum = stuff.ipsa_helper["aligning"](ref_spec, pred_spec);
-			return stuff.ipsa_helper["comparison"]["spectral_angle"](mergedSpectrum["intensity_1"], mergedSpectrum["intensity_2"]);
+			 return stuff.ipsa_helper["comparison"]["spectral_angle"](mergedSpectrum["intensity_1"], mergedSpectrum["intensity_2"]);
+//			return stuff.ipsa_helper["comparison"]["pearson_correlation"](mergedSpectrum["intensity_1"], mergedSpectrum["intensity_2"]);
 
 
 		});
@@ -683,6 +684,6 @@ abc =d3v4.json('https://www.proteomicsdb.org/logic/api/getFragmentationPredictio
 
 console.log(y.length)
 
-exports.randomizer = randomizer_b
+exports.randomizer = randomizer
 
 
