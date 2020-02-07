@@ -20,7 +20,6 @@ describe('utils strategies', () => {
 
 				assert.ok(result);
 			});
-			it('linear fit');
 		});
 		describe('binary spectra search', () => {
 			let spectrum_exp;

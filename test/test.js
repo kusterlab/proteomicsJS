@@ -17,12 +17,6 @@ describe('Merge strategies', () => {
 			assert.equal(1, compf(c.intensity_1, c.intensity_2));
 		*/
 	});
-	describe('binary', () => {
-		describe('helper', () => {
-			it('compare ppm');
-		});
-		it('show how to binary merge');
-	});
 	describe('merging strategies', () => {
 		it('how to choose between equal and part of');
 	});
@@ -117,10 +111,3 @@ describe('Similarities', () => {
 	});
 });
 
-describe('Statistics', () => {
-	it('how to extrapolate');
-});
-
-describe('Sample generation', () => {
-	it('how to generate random samples');
-});
