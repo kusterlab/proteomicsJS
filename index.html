@@ -30,14 +30,9 @@ svg {
 	, w = 960 - m.left - m.right
 	, numBins = 100;
 
-console.log(abc);
 //Using a fixed data set for demo, rather than random generated values
 //TODO - update fixed data set later with a larger dataset for demo/testing (and
 // feed in via d3.csv() or d3.json() )
-var dataset = [2.4059769174850905, 2.7600000000000002, 3.8217080187144488,
-	2.3899284588203313, 3.7264403738739054, 7.63, 3.16, 3.1600000000000006,
-	3.160000000000001, 2.06, 1.9728802107932477, 1.7180599494369857,
-	1.747203022782844, 2.39, 2.06, 2.06];
 abc.then(function(dataset){
 	dataset = dataset.sort((a, b) => a - b);
 
@@ -229,27 +224,16 @@ abc.then(function(dataset){
 	console.log("interpolation_data");
 	console.log(interpolation_data);
 	 var A = interpolation_data.map((el) => {
-		 return [1, el["x_log"]]
+		 return el["x_log"]
 	 }); // of the x-axis
 	var b = interpolation_data.map((el) => {
 		return el["ecdf_log"] 
 	});
-	console.log(A);
-	console.log(b);
-	var model=jStat.models.ols(b,A);
-	console.log(model);
-	function predict_wrapper(model){
-		return function(x){
-			return {
-				"x": x,
-				"y_predicted": model.coef[1] * x + model.coef[0]
-			}
-		}
-	};
-predict = predict_wrapper(model);
-	console.log(predict);
 
-	var predictLine = [Math.log10(0.5), Math.log10(1)].map(x => predict(x));
+	var model = utility.fit_linear_model(A, b);
+	var predictor = utility.predict_wrapper(model);
+
+	var predictLine = [Math.log10(0.5), Math.log10(1)].map(x => predictor(x));
 	console.log("predictLine_f");
 	console.log(predictLine);
 	/*
@@ -280,7 +264,7 @@ predict = predict_wrapper(model);
 		.attr('stroke-width', 4);
 	
 	var BEST_HIT = 0.99
-	var POINT = [Math.pow(10, predict(Math.log10(BEST_HIT))["y_predicted"])]
+	var POINT = [Math.pow(10, predictor(Math.log10(BEST_HIT))["y_predicted"])]
 	console.log("POINT");
 	console.log(POINT);
 	svg.selectAll(".dotp")

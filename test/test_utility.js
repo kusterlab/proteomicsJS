@@ -43,6 +43,17 @@ describe('Statistics', () => {
 });
 
 describe('Sample generation', () => {
+	it('how to create post body', () =>{
+		let aSequence, iCharge, dCe, aMods;
+		iCharge = 2;
+		dCe = 30;
+		aSequence = ["TOBIAS", "SCHMIDT"];
+		aMods = ["", "blub"];
+		var postBody = utility.create_post_body_for_prediction(aSequence, iCharge, dCe, aMods);
+		var oResult = {"sequence": ["TOBIAS", "SCHMIDT"], "charge": [2, 2], "ce": [30, 30], "mods": ["", "blub"]}
+		assert.deepEqual(oResult, postBody);
+		
+	});
 	it('how to generate random samples');
 	it('check for stargin string');
 	// https://www.chaijs.com/plugins/chai-string/

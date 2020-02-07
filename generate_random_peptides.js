@@ -2,77 +2,9 @@
 d3v4 = require('d3')
 uniq = require('uniq')
 stuff = require('./compare.js')
+utility = require('./utility')
 peptide="YLDGLTAER"
 offset=2
-
-
-/**
- * Generate random peptide sequence but keep the n-first and n-last amino acids
- * @constructor
- * @param {string} peptide - The peptide sequence
- * @param {integer} offset - How many amino acids to keep
- *
- */
-randomizer_b = function(peptide,offset){
-	pepl=peptide.length
-	// get array with amino acid idx
-	all_pepidxs=Array.from(new Array(pepl), (x,i) => i)
-	// get index with allowed poistions
-	pepidxs=Array.from(new Array(pepl -offset ), (x,i) => i + offset)
-	//shuffle
-	pepidxs_shuffle=d3v4.shuffle(pepidxs)
-	//	console.log(pepidxs)
-
-
-	pepidxs_concat=all_pepidxs.slice(0,offset).concat(pepidxs_shuffle)
-	chars = peptide.split('')
-	new_chars = pepidxs_concat.map(x => chars[x])
-	new_peptide=new_chars.join('')
-
-	return new_peptide
-}
-randomizer = function(peptide,offset){
-	pepl=peptide.length
-	// get array with amino acid idx
-	all_pepidxs=Array.from(new Array(pepl), (x,i) => i)
-	// get index with allowed poistions
-	pepidxs=Array.from(new Array(pepl -offset *2), (x,i) => i + offset)
-	//shuffle
-	pepidxs_shuffle=d3v4.shuffle(pepidxs)
-	//	console.log(pepidxs)
-
-
-	pepidxs_concat=all_pepidxs.slice(0,offset).concat(pepidxs_shuffle.concat(all_pepidxs.slice(-offset)))
-	chars = peptide.split('')
-	new_chars = pepidxs_concat.map(x => chars[x])
-	new_peptide=new_chars.join('')
-
-	return new_peptide
-}
-
-var postbody = {"sequence": [], "charge": [], "ce": [], "mods":[]};
-
-x = [...Array(1000)].map(x => randomizer(peptide, offset))
-y = uniq(x)
-console.log(y)
-var charge = 2;
-var ce = 40;
-var mods = "";
-function reducer(total, el){
-	total["sequence"].push(el);
-	total["charge"].push(charge);
-	total["ce"].push(ce);
-	total["mods"].push(mods);
-	return total;
-}
-a = y.reduce(reducer, postbody);
-
-console.log(a["sequence"].length);
-console.log(a["charge"].length);
-console.log(a["ce"].length);
-console.log(a["mods"].length);
-
-
 
 var ref_exp = [
 	  {
@@ -657,6 +589,12 @@ var ref_exp = [
 		    }
 ]
 
+var x = [...Array(1000)].map(x => utility.randomizer(peptide, offset))
+var y = uniq(x);
+var modStrings = [...Array(y.length)].map(x => "");
+
+var a = utility.create_post_body_for_prediction(y, 2, 40, modStrings);
+
 abc =d3v4.json('https://www.proteomicsdb.org/logic/api/getFragmentationPrediction.xsjs', {
 	method:"POST",
 	body: JSON.stringify(a)}).then(json => {console.log(json);return json})
@@ -682,8 +620,6 @@ abc =d3v4.json('https://www.proteomicsdb.org/logic/api/getFragmentationPredictio
 
 
 
-console.log(y.length)
 
-exports.randomizer = randomizer
 
 
