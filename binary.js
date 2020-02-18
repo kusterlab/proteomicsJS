@@ -11,10 +11,49 @@ var binarySearch = function(arr,target){
 	}
 
 	if (arr[midpoint] > target){
+		console.log(arr.slice(0, midpoint));
 		return binarySearch(arr.slice(0,midpoint),target);
 	}else if (arr[midpoint] < target){
+		console.log(arr.slice(midpoint));
 		return binarySearch(arr.slice(midpoint),target);
 	}
+}
+
+var getClosestValues = function(a, x) {
+	var lo = -1, hi = a.length;
+	while (hi - lo > 1) {
+		var mid = Math.round((lo + hi)/2);
+		if (a[mid] <= x) {
+			lo = mid;
+		} else {
+			hi = mid;
+		}
+	}
+	if (a[lo] == x) hi = lo;
+	return [a[lo], a[hi]];
+}
+
+var getClosestValues_spec = function(a, x) {
+	var lo = -1, hi = a.length;
+	while (hi - lo > 1) {
+		var mid = Math.round((lo + hi)/2);
+		if (a[mid]["mz"] <= x) {
+			lo = mid;
+		} else {
+			hi = mid;
+		}
+	}
+	if (a[lo] == x) hi = lo;
+	return [a[lo], a[hi]];
+}
+
+var getClosestValues_spec2 = function(a, x){
+	/*
+	 * ppm part
+	 */
+	return	getClosestValues_spec(a, x)
+			.filter(x=>{return x!==undefined})
+			.reduce((prev, next)=>{return Math.abs(prev["mz"]-x)<Math.abs(next["mz"]-x)?prev: next },0) 
 }
 
 var binarySearch_spec = function(arr,target){
@@ -102,4 +141,8 @@ exports.generate_searchF = generate_searchF
 exports.add_exp_flag = add_exp_flag
 exports.extract_mzs = extract_mzs 
 exports.binary_search_spectrum = binary_search_spectrum
-
+exports.binarySearch_spec = binarySearch_spec
+exports.binarySearch = binarySearch
+exports.getClosestValues = getClosestValues
+exports.getClosestValues_spec = getClosestValues_spec
+exports.getClosestValues_spec2 = getClosestValues_spec2

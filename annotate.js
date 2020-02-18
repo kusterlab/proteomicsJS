@@ -197,9 +197,9 @@ var f_apply_modification = function(sequence, modifications){
 
 }
 
-var f_get_masses = function(sequence, terminus){
+var f_get_masses = function(sequence, terminus, neutral_losses){
 	var residue_mass_seq = 0;
-	 sequence = terminal[terminus]? sequence: [...sequence].reverse();
+	 sequence = terminal[terminus]["n-terminal"]? sequence: [...sequence].reverse();
 	return sequence.reduce((prev, next, i) =>{
 		i += 1;
 		let mod_mass = next["modifications"].reduce((prev, modification) =>{
@@ -207,9 +207,9 @@ var f_get_masses = function(sequence, terminus){
 		}, 0);
 		// no NL
 		residue_mass_seq += next["residue_mass"] + mod_mass;
-			prev.push( {"label": terminus + i,"mz": 0  + residue_mass_seq + terminal[terminus]["offset"]      }  );
+			prev.push( {"label": terminus + i,"mz":  residue_mass_seq + terminal[terminus]["offset"]      }  );
 		neutral_losses.map(nl=>{
-			prev.push( {"label": terminus + i + "-" +nl["name"], "mz": 0  + residue_mass_seq  +  nl["offset"] + terminal[terminus]["offset"]}  );
+			prev.push( {"label": terminus + i + "-" +nl["name"], "mz":  residue_mass_seq  +  nl["offset"] + terminal[terminus]["offset"]}  );
 
 		})
 		return prev;
@@ -221,7 +221,6 @@ var f_get_charges = function(mass_list, max_charge){
 	let charges = [...Array(max_charge).keys()].map(x=>{return x+1});
 	return mass_list.reduce((prev, next) =>{
 		charges.map(chrg =>{
-			console.log(chrg);
 			let aminoAcid = _.cloneDeep(next);
 			aminoAcid["label"] = aminoAcid["label"] + " " + chrg + "+";
 			aminoAcid["mz"] =  (aminoAcid["mz"] + chrg * constants["MASS"]["PROTON"] ) / chrg;
