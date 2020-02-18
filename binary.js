@@ -62,27 +62,44 @@ exports.my_sorter = my_sorter
 var generate_searchF = function(spectrum){
 	return function(peak){
 		a = binarySearch_spec(spectrum, peak["mz"])
-		is_inside = exports.compare_ppm(a, peak, 20)
+		is_inside = exports.compare_ppm(a, peak, 20) //TODO correct here?
 		if(is_inside){
-			if(peak["exp_intensity"] < a["intensity"]){
-				// If a second predicted/reference peak would match to an experimental one. use the one with higher intensity
-				peak["exp_intensity"] = a["intensity"]
-			}
-		}else{
-			peak["exp_intensity"] = 0
+			a["exp_intensity"] = peak["intensity"]
+			return true;
 		}
-		return(peak)
+		return false;
 	}
 }
-exports.generate_searchF = generate_searchF
-
-exports.add_exp_flag = function(peak){
+var add_exp_flag = function(peak){
 	peak["exp_intensity"] = 0
 	return(peak)
 }
-exports.extract_mzs = function(prev, peak){
+var extract_mzs = function(prev, peak){
 	prev["intensity_1"].push( peak["exp_intensity"])
 	prev["intensity_2"].push(  peak["intensity"])
 	return(prev)
 }
+
+/**
+ * solves question of specrum_2 is how much part of 1
+ */
+var binary_search_spectrum = function(check_spectrum, ref_spectrum ){
+
+	var sorter_asc_mz = my_sorter('mz', 'asc');
+	ref_spectrum = ref_spectrum.sort(sorter_asc_mz);
+
+	var sorter_asc_intensity = my_sorter('intensity', 'asc');
+	check_spectrum = check_spectrum.sort(sorter_asc_mz);
+
+	ref_spectrum = ref_spectrum.map(add_exp_flag);
+	var f_peak = generate_searchF(ref_spectrum);
+
+	check_spectrum.map(f_peak);
+	return ref_spectrum.reduce(extract_mzs, { intensity_1: [], intensity_2: [] });
+}
+
+exports.generate_searchF = generate_searchF
+exports.add_exp_flag = add_exp_flag
+exports.extract_mzs = extract_mzs 
+exports.binary_search_spectrum = binary_search_spectrum
 

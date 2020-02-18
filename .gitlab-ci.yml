@@ -19,5 +19,8 @@ cache:
 test_async:
   script:
     - npm install
-    - npm test
+    - npm test 
+artifacts:
+  reports:
+    junit: test-results.xml
 

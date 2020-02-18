@@ -95,7 +95,17 @@ var randomizer = function(peptide,offset){
 	return new_peptide
 }
 
+/* get spectrum and a seq + mod
+ * @constructor
+ * @param {obj} spectrum - 
+ * @param {string} peptide -
+ * @param {string} modstring = 
+ */
+var estimateCE = function(){
+}
+
 exports.fit_linear_model = fit_linear_model
 exports.predict_wrapper = predict_wrapper
 exports.create_post_body_for_prediction = create_post_body_for_prediction
 exports.randomizer = randomizer
+exports.randomizer_b = randomizer_b
