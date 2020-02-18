@@ -20,7 +20,8 @@ test_async:
   script:
     - npm install
     - npm test 
-artifacts:
-  reports:
-    junit: test-results.xml
+
+  artifacts:
+    reports:
+      junit: test-results.xml
 
