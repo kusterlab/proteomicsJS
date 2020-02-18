@@ -39,16 +39,12 @@ describe('utils strategies', () => {
         spectrum_predicted.push({ mz: 1326.1111, intensity: 17 });
         spectrum_exp.push({ mz: 326.111, intensity: 13 });
       });
-	it('change it', ()=>{
-		// change to getClosestValues_spec
-		assert.equal(1, 0);
-	});
       it('stupid tobi test', () => {
         spectrum_exp = [{ mz: 761.378791167, intensity: 10 }, { mz: 987, intensity: 88 }];
         spectrum_ref = [{ mz: 113, intensity: 545 }, { mz: 761.3793, intensity: 1155 }, { mz: 123, intensity: 456 }];
         const zz = binary.binary_search_spectrum(spectrum_exp, spectrum_ref);
         assert.equal(zz.intensity_1.length, spectrum_ref.length);
-				 assert.deepEqual({ intensity_1: [0, 0, 0], intensity_2: [545, 456, 1155] }, zz);
+				 assert.deepEqual({ intensity_1: [0, 0, 10], intensity_2: [545, 456, 1155] }, zz);
         // assert.equal(1, zz);
       });
       it('generate spectra', () => {
@@ -78,7 +74,7 @@ describe('utils strategies', () => {
       it('do full binary cotain merge', () => {
         const zz = binary.binary_search_spectrum(spectrum_exp, spectrum_predicted);
 
-        assert.deepEqual([122095, 0, 111771, 60817, 9004638, 69098, 96982, 80302, 1000, 0], zz.intensity_1);
+        assert.deepEqual([122095, 13, 111771, 60817, 9004638, 69098, 96982, 80302, 1000, 0], zz.intensity_1);
         // predicted blown up
         assert.deepEqual([122095, 12, 111771, 60817, 9004638, 69098, 96982, 80302, 1000, 17], zz.intensity_2);
       });

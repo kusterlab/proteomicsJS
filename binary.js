@@ -100,7 +100,7 @@ exports.my_sorter = my_sorter
 
 var generate_searchF = function(spectrum){
 	return function(peak){
-		a = binarySearch_spec(spectrum, peak["mz"])
+		a = getClosestValues_spec2(spectrum, peak["mz"])
 		is_inside = exports.compare_ppm(a, peak, 20) //TODO correct here?
 		if(is_inside){
 			a["exp_intensity"] = peak["intensity"]
