@@ -101,7 +101,7 @@ exports.my_sorter = my_sorter
 var generate_searchF = function(spectrum){
 	return function(peak){
 		a = getClosestValues_spec2(spectrum, peak["mz"])
-		is_inside = exports.compare_ppm(a, peak, 20) //TODO correct here?
+		is_inside = exports.compare_ppm(a, peak, 10) //TODO correct here?
 		if(is_inside){
 			a["exp_intensity"] = peak["intensity"]
 			return true;
@@ -118,6 +118,7 @@ var extract_mzs = function(prev, peak){
 	prev["intensity_2"].push(  peak["intensity"])
 	return(prev)
 }
+
 
 /**
  * solves question of specrum_2 is how much part of 1
@@ -136,6 +137,15 @@ var binary_search_spectrum = function(check_spectrum, ref_spectrum ){
 	check_spectrum.map(f_peak);
 	return ref_spectrum.reduce(extract_mzs, { intensity_1: [], intensity_2: [] });
 }
+var binary_full_merge = function(check_spectrum, ref_spectrum){
+	merge1 = binary_search_spectrum(check_spectrum, ref_spectrum);
+	merge2 = binary_search_spectrum(ref_spectrum, check_spectrum);
+	to_add_1 = merge2.intensity_1.filter((x,i) => x===0);
+	to_add_2 = merge2.intensity_2.filter((x,i) => merge2.intensity_1[i]===0);
+	merge1.intensity_1 = merge1.intensity_1.concat(to_add_2);
+	merge1.intensity_2 = merge1.intensity_2.concat(to_add_1);
+	return(merge1);
+}
 
 exports.generate_searchF = generate_searchF
 exports.add_exp_flag = add_exp_flag
@@ -146,3 +156,4 @@ exports.binarySearch = binarySearch
 exports.getClosestValues = getClosestValues
 exports.getClosestValues_spec = getClosestValues_spec
 exports.getClosestValues_spec2 = getClosestValues_spec2
+exports.binary_full_merge = binary_full_merge

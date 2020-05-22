@@ -332,6 +332,9 @@ var ipsa_helper = {
 				// we normalize the vector in here elementwise
 				dot_help += (spectrum_1[n] / norm_a) * (spectrum_2[n] / norm_b)
 			}
+			if(isNaN(dot_help)){
+				return(0);
+			}
 			return(1-2*Math.acos(dot_help)/Math.PI)
 
 		},
