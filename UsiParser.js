@@ -1,5 +1,4 @@
-
-class UsiResponse {
+UsiResponse = class UsiResponse {
   constructor(type) {
     this.type = type;
     this.sequence = '';
@@ -49,6 +48,7 @@ class UsiResponse {
         break;
     }
   }
-}
+};
 
-exports.UsiResponse = UsiResponse;
+// exports.UsiResponse = UsiResponse;
+module.exports = { UsiResponse };

@@ -1,3 +1,4 @@
+const binary = require('./binary');
 
 class Annotation {
 	ChemistryConstants = {
