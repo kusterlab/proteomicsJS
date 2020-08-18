@@ -689,7 +689,6 @@ describe('Annotate spectrum', () => {
         const f_peak = generate_searchF2(exp_spec, 20);
         const zz = annotated_peaks.map(f_peak);
         const zz2 = exp_spec.filter((x) => x.label.length > 0);
-	console.log(zz2);
         assert.equal(zz2.length, 11);
         assert.deepEqual(zz2[5], { intensity: 3555, mz: 449.20453, label: ['b4 1+'] });
       });

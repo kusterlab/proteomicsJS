@@ -1,4 +1,4 @@
-compare = require('../compare.js');
+compare = require('../measures.js');
 const assert = require('assert');
 const chai = require('chai');
 const chaiAlmost = require('chai-almost');

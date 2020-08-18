@@ -60,6 +60,7 @@ def.then(function(dataset){
 	//var xScale = d3.scale.log().domain([1e-2, 1]).range([0, w]); // TODO CALCULATE MINIMU AS min(log(dataset))
 	var xScale = d3.scale.log().domain([x_min, 1]).range([0, w]); // TODO CALCULATE MINIMU AS min(log(dataset))
 	//var xScale = d3.scale.linear().domain([0, 1]).range([0, w]); // TODO CALCULATE MINIMU AS min(log(dataset))
+	var yScaleDensity = d3.scale.linear().domain([0,1]).range([h, 0]); // TODO CALCULATE MINIMU AS min(log(dataset))
 
 	//Axes and scales
 	//	ys = { 
@@ -106,6 +107,41 @@ def.then(function(dataset){
 		.attr("d", ecdf)
 		.attr("fill", "none")
 		.attr("stroke", "#005293");
+
+
+	// Function to compute density
+	/*
+	function kernelDensityEstimator(kernel, X) {
+		  return function(V) {
+			      return X.map(function(x) {
+				            return [x, d3.mean(V, function(v) { return kernel(x - v); })];
+				          });
+			    };
+	}
+	function kernelEpanechnikov(k) {
+		  return function(v) {
+			      return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
+			    };
+	}
+	  // Compute kernel density estimation
+	  var kde = kernelDensityEstimator(kernelEpanechnikov(7), xScale.ticks(40));
+	  var density =  kde( dataset_bac.map(function(d){  return d; }) )
+	console.log(density);
+
+	  svg.append("path")
+	      .attr("class", "mypath")
+	      .datum(density)
+	      .attr("fill", "#69b3a2")
+	      .attr("opacity", ".8")
+	      .attr("stroke", "#000")
+	      .attr("stroke-width", 1)
+	      .attr("stroke-linejoin", "round")
+	      .attr("d",  d3v4.line()
+		              .curve(d3v4.curveBasis)
+		                .x(function(d) { return xScale(d[0]); })
+		                .y(function(d) { return yScaleDensity(d[1]); })
+		            );
+*/
 	//Draw histogram
 	/*
 	var bar = svg.selectAll(".bar")

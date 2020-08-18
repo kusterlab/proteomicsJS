@@ -15,7 +15,6 @@ describe('Generation of variants', () => {
   var sequence = [];
   sequence.push(_.cloneDeep(annotate.aminoAcids.A));
   sequence.push(_.cloneDeep(annotate.aminoAcids.C));
-	console.log(sequence);
   sequence[1].modifications.push(_.cloneDeep(annotate.modifications[0]));
   sequence.push(_.cloneDeep(annotate.aminoAcids.W));
   sequence.push(_.cloneDeep(annotate.aminoAcids.R));
@@ -38,22 +37,19 @@ describe('Generation of variants', () => {
     spectrum_predicted.push({ mz: 1326.1111, intensity: 17 });
     spectrum_exp.push({ mz: 326.111, intensity: 13 });
   });
-it('calculating allowed error', ()=>{
-	/*
+it('calculating allowed error', /*()=>{
 	 *
 	 * delta is in 20 ppm distance?
 	 *
 	 *
-	 */
 	assert.equal(2, 0);
-});
-  it('mass correct',()=>{
+}*/);
+  it('mass correct',/*()=>{
 	  /*
 	  GQ,185.08004200000002
 	  AGG,185.08004200000002
-	  */
 	  assert.equal(1, 0);
-  });
+  }*/);
   /*
 	 * it('mass correct', () => {
 	});

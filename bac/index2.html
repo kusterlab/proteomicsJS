@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Add 2 buttons -->
+<button onclick="update(data1)">Dataset 1</button>
+<button onclick="update(data2)">Dataset 2</button>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+
+<script>
+
+	// Create 2 datasets
+	var data1 = [
+		{ser1: 0.3, ser2: 4},
+		{ser1: 2, ser2: 16},
+		{ser1: 3, ser2: 8}
+	];
+
+var data2 = [
+	{ser1: 1, ser2: 7},
+	{ser1: 4, ser2: 1},
+	{ser1: 6, ser2: 8}
+];
+
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 30, left: 50},
+	width = 460 - margin.left - margin.right,
+	height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+	.append("svg")
+	.attr("width", width + margin.left + margin.right)
+	.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+	.attr("transform",
+		"translate(" + margin.left + "," + margin.top + ")");
+
+// Initialise a X axis:
+var x = d3.scaleLinear().range([0,width]);
+var xAxis = d3.axisBottom().scale(x);
+svg.append("g")
+	.attr("transform", "translate(0," + height + ")")
+	.attr("class","myXaxis")
+
+// Initialize an Y axis
+var y = d3.scaleLinear().range([height, 0]);
+var yAxis = d3.axisLeft().scale(y);
+svg.append("g")
+	.attr("class","myYaxis")
+
+// Create a function that takes a dataset as input and update the plot:
+function update(data) {
+	y.domain([-1, 1]);
+	svg.selectAll(".myYaxis")
+		.transition()
+		.duration(3000)
+		.call(yAxis);
+	console.log(data);
+	// Create the X axis:
+	// x.domain([0, d3.max(data, function(d) { return d.ser1 }) ]);
+	x.domain([0,  10]);
+	svg.selectAll(".myXaxis").transition()
+		.duration(3000)
+		.call(xAxis)
+		.attr("transform", "translate(0," + y(0) + ")");;
+
+	// create the Y axis
+	// y.domain([0, d3.max(data, function(d) { return d.ser2  }) ]);
+
+	// Create a update selection: bind to the new data
+	var u = svg.selectAll(".bar")
+		.data(data.ions, function(d){ return d.id });
+
+	u.exit()
+	   .transition() // and apply changes to all of them
+	    .duration(1000)
+		.attr('height', function(d){return 0;})
+	    .style("opacity", 0)
+		.remove();
+	// Updata the line
+	u
+		.enter()
+		.append("rect")
+		.attr("class","bar")
+		.attr('x', function(d){return x(d.mz + Math.random());})
+		.attr('y', function(d){return y(0);})
+		.attr('width', function(d){return 10;})
+		.merge(u)
+		.transition()
+		.duration(3000)
+		.attr('y', function(d){return y(0);})
+		.attr('x', function(d){return x(d.mz + Math.random());})
+		.attr('height', function(d){return y(Math.random());})
+	/*
+		.attr("d", d3.line()
+			.x(function(d) { return x(d.mz); })
+	// .y(function(d) { return y(d.intensity); }))
+			.y(function(d) { return y(Math.random()); }))
+	 */
+		.attr("fill", "none")
+		.attr("stroke", "steelblue")
+		.attr("stroke-width", 2.5);
+}
+
+function updateData(){
+
+	var f = function(){
+		var spectra = {"ions" : []}
+		for (var i = 0; i < parseInt(Math.random() * 10 + 1); i++){
+			spectra.ions.push({"mz": i, "intensity": 0.5, "id": i});
+		}
+		update(spectra)
+	};
+
+	setInterval(function(){ 
+		f();
+		//code goes here that will be run every 5 seconds.    
+	}, 6000);
+	f();
+
+}
+
+// At the beginning, I run the update function on the first dataset:
+updateData()
+
+</script>
+</html>

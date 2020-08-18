@@ -2100,13 +2100,8 @@ var ref_exp_3 =
 y_alt = [
 "PVIEEKPAIPVVEK",
 "PTDAQTKQSTSEPAS",
-"DGSKASKTEPSANQK",
+	"AEEQMLKEREER",
 "KAVPEEKAPLPIQK",
-"AVPEEKAPLPIQKK",
-"ITGSPEIQVVWYR",
-"PTFSISDVERIRK",
-"SNLQVVEAISQGFR",
-"NGPTSLASGHFTGSSK",
 "TYFSELTMELEGK",
 "SLGDLFHKGYRVR",
 "QGGSNIFITVKQKK",
@@ -2985,7 +2980,7 @@ y_alt = [
 
 ];
 peptide = peptide_1;
-ref_exp = ref_exp_1;
+ref_exp = ref_exp_3;
 var x = [...Array(TRIALS)].map(x => utility.randomizer_b(peptide, offset))
 x.push(peptide);
 //x.push("AEAEAQAELESFPR");
@@ -2999,7 +2994,7 @@ y_alt.push("AEAEQAAEELSFPR");
 y_alt.push("AEAEAQAELESFPR");
 y_alt.push("AEAEAQAEESLFPR");
 y_alt.push("AEEAAQAEELSFPR");
-// y = y_alt;
+ y = y_alt;
 
 const pos = y.findIndex(x=> x==peptide);
 var modStrings = [...Array(y.length)].map(x => "");
@@ -3040,10 +3035,6 @@ def =d3v4.json('https://www.proteomicsdb.org/logic/api/getFragmentationPredictio
 
 			// var binarySpectrum = binary.binary_search_spectrum(ref_exp, el["ions"]);
 			var binarySpectrum = binary.binary_full_merge(ref_exp, el["ions"]);
-			if (el.sequence == peptide){
-				console.log(
-				stuff.ipsa_helper["comparison"]["spectral_angle"](binarySpectrum["intensity_1"], binarySpectrum["intensity_2"]));
-			}
 //			console.log(binarySpectrum);
 			var similarity =  stuff.ipsa_helper["comparison"]["spectral_angle"](binarySpectrum["intensity_1"], binarySpectrum["intensity_2"]);
 			return {"similarity": similarity, "sequence": el.sequence, "precursorCharge": el.precursorCharge,
