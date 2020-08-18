@@ -9,19 +9,6 @@ chai.use(chaiAlmost()); // tolerance of 10^-6
 
 const { expect } = chai;
 
-describe('Merge strategies', () => {
-  describe('binning', () => {
-    it('should return 1 when spectrum is the same');
-    /*
-			a = compare.ipsa_helper.binning(spectrum);
-			c = compare.ipsa_helper.aligning(a, a);
-			assert.equal(1, compf(c.intensity_1, c.intensity_2));
-		*/
-  });
-  describe('merging strategies', () => {
-    it('how to choose between equal and part of');
-  });
-});
 
 describe('Similarities', () => {
   let spectrum_exp;
