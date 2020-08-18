@@ -4,6 +4,7 @@
   "description": "",
   "main": "test.js",
   "dependencies": {
+    "browserify": "^16.5.2",
     "d3": "^5.0.0",
     "fetch": "^1.1.0",
     "g": "^2.0.1",
@@ -27,7 +28,8 @@
   "scripts": {
     "test": "nyc mocha  --recursive --reporter mocha-junit-reporter",
     "test_watch": "mocha --recursive -w",
-    "lint": "eslint --ext js --fix ./test"
+    "lint": "eslint --ext js --fix ./test *js",
+    "browserify": "browserify UsiParser.js"
   },
   "author": "",
   "license": "ISC"
