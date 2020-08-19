@@ -271,6 +271,7 @@ compare_ppm_FACTORY = function (property) {
 
 exports.compare_ppm = compare_ppm_FACTORY('mz');
 exports.my_sorter = my_sorter;
+exports.compare_ppm_FACTORY = compare_ppm_FACTORY;
 
 const generate_searchF = function (spectrum) {
   return function (peak) {

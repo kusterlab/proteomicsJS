@@ -41,8 +41,7 @@ UsiResponse = class UsiResponse {
         this.precursorCharge = response.charge;
         this.aMz = JSON.parse(response.ms2peaks).map((a) => (a[0]));
         this.aInt = JSON.parse(response.ms2peaks).map((a) => (a[0]));
-
-        break;
+	break;
       default:
         //
         break;

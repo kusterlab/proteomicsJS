@@ -3,7 +3,7 @@ const assert = require('assert');
 const chai = require('chai');
 const chaiAlmost = require('chai-almost');
 const _ = require('lodash');
-const annotate = require('../annotate');
+// const annotate = require('../annotate');
 const binary = require('../binary');
 const UsiParser = require('../UsiParser');
 

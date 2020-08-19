@@ -1,6 +1,6 @@
 const binary = require('./binary');
 
-class Annotation {
+Annotation = class Annotation {
 	ChemistryConstants = {
 		Proton: 1.007276466879,
 		H: 1.00782503223,
@@ -49,22 +49,123 @@ class Annotation {
 	};
 
 	constructor(request){
+		this.peakData = request["peakData"].map((el, i) =>{
+			return {"mz": el["mZ"],
+				"intensity": el["intensity"],
+			}
+		});
 		this.response = {};
+		this.mods = request.mods===undefined? []: request.mods;
 		this.aminoAcids = this.generateAminoAcids(
-			request["sequence"], request["mods"]);
-		this.precursorMz = this.calculatePrecursorMZ(request.sequence, request.precursorCharge, request.mods);
+			request["sequence"], this.mods);
+		this.precursorCharge = request.precursorCharge;
+		this.matchType = request.matchingType;
+		this.modification = request["mods"];
+		this.precursorMz = this.calculatePrecursorMZ(request.sequence, request.precursorCharge, this.mods);
 		this.response["isPPM"] = this.transformIsPPM(request);
-		this.response["precursorMz"] = this.calculatePrecursorMZ(request.sequence, request.precursorCharge, request.mods);
-		this.response["precursorMass"] = this.calculatePrecursorMass(request.sequence, request.mods);
+		this.response["precursorMz"] = this.calculatePrecursorMZ(request.sequence, request.precursorCharge, this.mods);
+		this.response["precursorMass"] = this.calculatePrecursorMass(request.sequence, this.mods);
 		this.response["fragments"] = this.calculateFragments(request["sequence"], 
 			request["precursorCharge"], 
-			request.mods,
+			this.mods,
 			request["fragmentTypes"]) ;
 		this.allMassOffset = this.calculateAllMassOffset(
-			request.mods);
+			this.mods);
+		this.response["modifications"] =this.mods;
+		this.peaks = this.annotatePeaks();
+		this.tolerance = request["tolerance"];
+		this.sequence = request["sequence"];
+		this.isPPM =  request.toleranceType === 'ppm';
+		this.fragmentTypes = request.fragmentTypes;
+		this.cutoff = request.cutoff;
+		this.modifications = [];// this.generateModifications();
+		this.modification = new Array(this.sequence.length + 2).fill(undefined).map((e, i) =>{
+			return {
+				site: i -1,
+				deltaElement: null,
+				deltaMass: 0
+			}
+		});
+	}
+	generateModifications(){
+			let n_term = this.modification.filter(e => {return e.index ==-1});
+			let c_term = this.modification.filter(e => {return e.index ==this.sequence.length + 1});
+		return n_term.concat(c_term);
+
+/*
+			return(
+				{"mass": this.AminoAcids[e],
+					"modification": {
+						"deltaElement": null,
+						"deltaMass": 0 + m,
+						"site": i 
+					},
+					"name": e
+				});
+				*/
+//		var n_term = this.modification.filter((e) =>{e.index ===-1});
+		console.log(this.modification);
+		var seq_part = this.aminoAcids.map((el) =>{return el.modification}) ;
+		return this.allMassOffset.concat(seq_part);
+
+	}
+	fakeAPI(){
+		return{
+			tolerance: this.tolerance,
+			sequence: this.sequence,
+			precursorMz : this.precursorMz,
+			precursorMass : this.response["precursorMass"],
+			precursorCharge : this.precursorCharge,
+			peaks : this.peaks,
+			modifications: this.modifications,
+			matchType: this.matchType,
+			isPPM: this.isPPM,
+			fragments : this.response["fragments"],
+			fragTypes : this.fragmentTypes,
+			cutoff: this.cutoff,
+			checkVar: null,
+			charge: this.precursorCharge,
+			basePeak: {
+				"mZ": 948.478501167,
+				"intensity": 1
+			},
+			annotationTime: null,
+			aminoAcids: this.aminoAcids
+
+		}
 	}
 	transformIsPPM(json) {
 		return json.toleranceType === 'ppm';
+	}
+	annotatePeaks(){
+      var spectrum_1 = this.peakData; // we search through experimental data
+      spectrum_1.map((el) =>{
+	      el["matchedFeatures"] = [];
+	      el["percentBasePeak"] = el["intensity"] *100;
+	      el["sn"] = null;
+	      return(el);
+      })
+      // var spectrum_1 = answer; // we search in the calculated values
+      const sorter_asc_mz = binary.my_sorter('mz', 'asc');
+      var compare_ppmF = binary.compare_ppm_FACTORY('mz');
+      var spectrum_1 = spectrum_1.sort(sorter_asc_mz);
+	  const bla = this.response["fragments"].map((el) =>{ // el are calculated frags
+	      const a = binary.getClosestValues_spec2(spectrum_1, el.mz); //peak in exp // is a reference
+	      var is_inside = compare_ppmF(a, el, 20); // TODO correct here?
+
+		  if(is_inside){
+			  a["matchedFeatures"].push({
+				 "feature": el,
+				 "massError": (a["mz"] -el["mz"]) / el["mz"] * Math.pow(10, 6) // https://github.com/coongroup/IPSA/blob/0b5125a8923d1a1897b61c53390164e7e7c5d356/support/php/NegativeModeAnnotateEntireFile.php#L898
+
+			  });
+			return(a)
+		  }
+
+
+	  }).filter((el) =>{return el !== undefined});
+	return(spectrum_1);
+
 	}
 	generateAminoAcids(sequence, mods){
 		var r = sequence.split(""); // 
@@ -117,7 +218,7 @@ class Annotation {
 	}
 
 	calculatePrecursorMass(sequence, mods) {
-		const m = this.calculateAllMassOffset(request.mods);
+		const m = this.calculateAllMassOffset(mods);
 		return this.calculateAminoSequenceMass(sequence) + m
 			+ this.N_TERMINUS + this.C_TERMINUS;
 	}

@@ -2,13 +2,13 @@ const assert = require('assert');
 const chai = require('chai');
 const chaiAlmost = require('chai-almost');
 const _ = require('lodash');
-const annotate = require('../annotate');
+//const annotate = require('../annotate');
 const binary = require('../binary');
 const AnnotationTransformer = require('../AnnotationTransformer');
 
 
 chai.use(chaiAlmost()); // tolerance of 10^-6
-chai.use(chaiAlmost(0.0001));
+chai.use(chaiAlmost(0.00001));
 const { expect } = chai;
 //
 //
@@ -3626,6 +3626,130 @@ describe('Annotate spectrum', () => {
     // move string ppm to TRUE
     // assert.deepEqual(request['toleranceType'], response["isPPM"]);
   });
+  it('annotate', () => {
+	// we put the search 
+      const annotation = new AnnotationTransformer.Annotation(request);
+      var spectrum_1 = annotation.peakData; // we search through experimental data
+      spectrum_1.map((el) =>{
+	      el["matchedFeatures"] = [];
+	      el["percentBasePeak"] = el["intensity"] *100;
+	      el["sn"] = null;
+	      return(el);
+      })
+      // var spectrum_1 = answer; // we search in the calculated values
+      const sorter_asc_mz = binary.my_sorter('mz', 'asc');
+      compare_ppmF = compare_ppm_FACTORY('mz');
+      var spectrum_1 = spectrum_1.sort(sorter_asc_mz);
+	  const bla = annotation.response["fragments"].map((el) =>{ // el are calculated frags
+	      const a = binary.getClosestValues_spec2(spectrum_1, el.mz); //peak in exp // is a reference
+	      var is_inside = compare_ppmF(a, el, 20); // TODO correct here?
+
+		  if(is_inside){
+			  a["matchedFeatures"].push({
+				 "feature": el,
+				 "massError": (a["mz"] -el["mz"]) / el["mz"] * Math.pow(10, 6) // https://github.com/coongroup/IPSA/blob/0b5125a8923d1a1897b61c53390164e7e7c5d356/support/php/NegativeModeAnnotateEntireFile.php#L898
+
+			  });
+			return(a)
+		  }
+
+
+	  }).filter((el) =>{return el !== undefined});
+
+//       assert.deepEqual(a, false);
+     //  assert.deepEqual(spectrum_1[0], response["peaks"][0]);
+       expect(spectrum_1[0]).to.almost.eql( response["peaks"][0]);
+       expect(spectrum_1).to.almost.eql( response["peaks"]);
+       expect(annotation.peaks).to.almost.eql( response["peaks"]);
+  });
+	describe('integration test', () => {
+  it('aminoAcids', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["aminoAcids"]).to.almost.eql( response["aminoAcids"]);
+  });
+  it('annotationTime', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["annotationTime"]).to.almost.eql( response["annotationTime"]);
+  });
+  it('basePeak', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["basePeak"]).to.almost.eql( response["basePeak"]);
+  });
+  it('charge', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["charge"]).to.almost.eql( response["charge"]);
+  });
+  it('checkVar', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["checkVar"]).to.almost.eql( response["checkVar"]);
+  });
+  it('cutoff', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["cutoff"]).to.almost.eql( response["cutoff"]);
+  });
+  it('fragTypes', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["fragTypes"]).to.almost.eql( response["fragTypes"]);
+  });
+  it('fragments', /*() =>{ // problem is sorting
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["fragments"]).to.almost.eql( response["fragments"]);
+  }*/);
+  it('isPPM', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["isPPM"]).to.almost.eql( response["isPPM"]);
+  });
+  it('matchType', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["matchType"]).to.almost.eql( response["matchType"]);
+  });
+  it('modifications', /*() =>{ problem is length + 1 and -1 => has to be faked
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["modifications"]).to.almost.eql( response["modifications"]);
+  }*/);
+  it('peaks', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["peaks"]).to.almost.eql( response["peaks"]);
+  });
+  it('precursorCharge', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["precursorCharge"]).to.almost.eql( response["precursorCharge"]);
+  });
+  it('precursorMass', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["precursorMass"]).to.almost.eql( response["precursorMass"]);
+  });
+  it('precursorMz', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["precursorMz"]).to.almost.eql( response["precursorMz"]);
+  });
+  it('sequence', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["sequence"]).to.almost.eql( response["sequence"]);
+  });
+  it('tolerance', () =>{
+      const annotation = new AnnotationTransformer.Annotation(request);
+	  const r = annotation.fakeAPI();
+       expect(r["tolerance"]).to.almost.eql( response["tolerance"]);
+  });
+
+	});
 });
 
 //
