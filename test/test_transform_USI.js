@@ -1,4 +1,3 @@
-
 const assert = require('assert');
 const chai = require('chai');
 const chaiAlmost = require('chai-almost');
@@ -6,7 +5,6 @@ const _ = require('lodash');
 // const annotate = require('../annotate');
 const binary = require('../binary');
 const UsiParser = require('../UsiParser');
-
 
 chai.use(chaiAlmost()); // tolerance of 10^-6
 chai.use(chaiAlmost(0.0001));
@@ -17,7 +15,6 @@ function transformIsPPM(json) {
   json.isPPM = json.toleranceType === 'ppm';
   return json;
 }
-
 
 // https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/ShowObservedSpectrum?USI=mzspec:PXD000561:Adult_Frontalcortex_bRP_Elite_85_f09:scan:17555:VLHPLEGAVVIIFK/2
 describe('Parse USI endpoints', () => {

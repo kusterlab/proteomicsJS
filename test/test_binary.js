@@ -1,4 +1,3 @@
-
 const assert = require('assert');
 const binary = require('../binary.js');
 
@@ -188,7 +187,7 @@ describe('utils strategies', () => {
           {
             id_1: -1,
             id_2: 0,
-            intensity_1: -1,
+            intensity_1: 0,
             intensity_2: 123,
             mz_1: -1,
             mz_2: 9,
@@ -207,7 +206,7 @@ describe('utils strategies', () => {
           {
             id_1: -1,
             id_2: 2,
-            intensity_1: -1,
+            intensity_1: 0,
             intensity_2: 10,
             mz_1: -1,
             mz_2: 10.00002,
@@ -215,7 +214,7 @@ describe('utils strategies', () => {
           {
             id_1: -1,
             id_2: 3,
-            intensity_1: -1,
+            intensity_1: 0,
             intensity_2: 88,
             mz_1: -1,
             mz_2: 12,
@@ -270,7 +269,7 @@ describe('utils strategies', () => {
           {
             id_1: -1,
             id_2: 2,
-            intensity_1: -1,
+            intensity_1: 0,
             intensity_2: 22,
             mz_1: -1,
             mz_2: 12,
@@ -289,7 +288,7 @@ describe('utils strategies', () => {
             id_1: 4,
             id_2: -1,
             intensity_1: 4.4,
-            intensity_2: -1,
+            intensity_2: 0,
             mz_1: 12,
             mz_2: -1,
           },
@@ -324,12 +323,11 @@ describe('utils strategies', () => {
           {
             id_1: -1,
             id_2: 6,
-            intensity_1: -1,
+            intensity_1: 0,
             intensity_2: 66,
             mz_1: -1,
             mz_2: 120,
           },
-
 
         ];
 
@@ -353,7 +351,7 @@ describe('utils strategies', () => {
           {
             id_1: -1,
             id_2: 7,
-            intensity_1: -1,
+            intensity_1: 0,
             intensity_2: 10,
             mz_1: -1,
             mz_2: 20,
@@ -361,7 +359,7 @@ describe('utils strategies', () => {
           {
             id_1: -1,
             id_2: 5,
-            intensity_1: -1,
+            intensity_1: 0,
             intensity_2: 5,
             mz_1: -1,
             mz_2: 15,
@@ -372,7 +370,7 @@ describe('utils strategies', () => {
           {
             id_1: -1,
             id_2: 2,
-            intensity_1: -1,
+            intensity_1: 0,
             intensity_2: 22,
             mz_1: -1,
             mz_2: 12,
@@ -388,7 +386,7 @@ describe('utils strategies', () => {
           {
             id_1: -1,
             id_2: 6,
-            intensity_1: -1,
+            intensity_1: 0,
             intensity_2: 66,
             mz_1: -1,
             mz_2: 120,
@@ -397,7 +395,7 @@ describe('utils strategies', () => {
             id_1: 4,
             id_2: -1,
             intensity_1: 4.4,
-            intensity_2: -1,
+            intensity_2: 0,
             mz_1: 12,
             mz_2: -1,
           },
@@ -405,7 +403,7 @@ describe('utils strategies', () => {
             id_1: 5,
             id_2: -1,
             intensity_1: 5,
-            intensity_2: -1,
+            intensity_2: 0,
             mz_1: 15,
             mz_2: -1,
           },
@@ -413,7 +411,7 @@ describe('utils strategies', () => {
             id_1: 7,
             id_2: -1,
             intensity_1: 10,
-            intensity_2: -1,
+            intensity_2: 0,
             mz_1: 20,
             mz_2: -1,
           },
@@ -466,7 +464,6 @@ describe('utils strategies', () => {
       });
       it('sort mz', () => {
         const sorter_asc_mz = binary.my_sorter('mz', 'asc');
-
 
         const spectrum123 = spectrum.sort(sorter_asc_mz);
         assert.equal(326.1, spectrum123[0].mz);

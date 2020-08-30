@@ -1,4 +1,3 @@
-
 spec = [1, 2, 3];
 norm = Math.sqrt(spec.map((x) => Math.pow(x, 2)).reduce((prev, next) => prev + next, 0));
 console.log(norm);

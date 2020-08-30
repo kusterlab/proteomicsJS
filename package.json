@@ -29,7 +29,7 @@
     "test": "nyc mocha  --recursive --reporter mocha-junit-reporter",
     "test_watch": "mocha --recursive -w",
     "lint": "eslint --ext js --fix ./test *js",
-    "browserify": "browserify UsiParser.js AnnotationTransformer.js -o bundle.js"
+    "browserify": "browserify UsiParser.js AnnotationTransformer.js Comparator.js -o bundle.js"
   },
   "author": "",
   "license": "ISC"

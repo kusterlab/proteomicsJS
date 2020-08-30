@@ -54,7 +54,15 @@ Annotation = class Annotation {
 				"intensity": el["intensity"],
 			}
 		});
+		var max_peak = this.peakData.reduce((e,i)=>{ return e.intensity > i.intensity ? e : i});
+		let max_peak_intensity = max_peak.intensity;
+		this.peakData = this.peakData.map((el) => {
+			let bac_intensity = el["intensity"];
+			el["intensity"] = el["intensity"] / max_peak_intensity;
+			return(el);
+		})
 		this.response = {};
+		this.cutoff = request.cutoff;
 		this.mods = request.mods===undefined? []: request.mods;
 		this.aminoAcids = this.generateAminoAcids(
 			request["sequence"], this.mods);
@@ -72,14 +80,13 @@ Annotation = class Annotation {
 		this.allMassOffset = this.calculateAllMassOffset(
 			this.mods);
 		this.response["modifications"] =this.mods;
-		this.peaks = this.annotatePeaks();
 		this.tolerance = request["tolerance"];
+		this.peaks = this.annotatePeaks();
 		this.sequence = request["sequence"];
 		this.isPPM =  request.toleranceType === 'ppm';
 		this.fragmentTypes = request.fragmentTypes;
-		this.cutoff = request.cutoff;
 		this.modifications = [];// this.generateModifications();
-		this.modification = new Array(this.sequence.length + 2).fill(undefined).map((e, i) =>{
+		this.modifications = new Array(this.sequence.length + 2).fill(undefined).map((e, i) =>{
 			return {
 				site: i -1,
 				deltaElement: null,
@@ -88,11 +95,11 @@ Annotation = class Annotation {
 		});
 	}
 	generateModifications(){
-			let n_term = this.modification.filter(e => {return e.index ==-1});
-			let c_term = this.modification.filter(e => {return e.index ==this.sequence.length + 1});
+		let n_term = this.modification.filter(e => {return e.index ==-1});
+		let c_term = this.modification.filter(e => {return e.index ==this.sequence.length + 1});
 		return n_term.concat(c_term);
 
-/*
+		/*
 			return(
 				{"mass": this.AminoAcids[e],
 					"modification": {
@@ -103,12 +110,13 @@ Annotation = class Annotation {
 					"name": e
 				});
 				*/
-//		var n_term = this.modification.filter((e) =>{e.index ===-1});
-		console.log(this.modification);
+		//		var n_term = this.modification.filter((e) =>{e.index ===-1});
 		var seq_part = this.aminoAcids.map((el) =>{return el.modification}) ;
 		return this.allMassOffset.concat(seq_part);
 
 	}
+	
+
 	fakeAPI(){
 		return{
 			tolerance: this.tolerance,
@@ -138,33 +146,39 @@ Annotation = class Annotation {
 		return json.toleranceType === 'ppm';
 	}
 	annotatePeaks(){
-      var spectrum_1 = this.peakData; // we search through experimental data
-      spectrum_1.map((el) =>{
-	      el["matchedFeatures"] = [];
-	      el["percentBasePeak"] = el["intensity"] *100;
-	      el["sn"] = null;
-	      return(el);
-      })
-      // var spectrum_1 = answer; // we search in the calculated values
-      const sorter_asc_mz = binary.my_sorter('mz', 'asc');
-      var compare_ppmF = binary.compare_ppm_FACTORY('mz');
-      var spectrum_1 = spectrum_1.sort(sorter_asc_mz);
-	  const bla = this.response["fragments"].map((el) =>{ // el are calculated frags
-	      const a = binary.getClosestValues_spec2(spectrum_1, el.mz); //peak in exp // is a reference
-	      var is_inside = compare_ppmF(a, el, 20); // TODO correct here?
+		var spectrum_1 = this.peakData; // we search through experimental data
+		spectrum_1.map((el) =>{
+			el["matchedFeatures"] = [];
+			el["percentBasePeak"] = el["intensity"] *100;
+			el["sn"] = null;
+			return(el);
+		})
+		// var spectrum_1 = answer; // we search in the calculated values
+		const sorter_asc_mz = binary.my_sorter('mz', 'asc');
+		var compare_ppmF = binary.compare_ppm_FACTORY('mz');
+		var spectrum_1 = spectrum_1.sort(sorter_asc_mz);
+		const bla = this.response["fragments"].map((el) =>{ // el are calculated frags
+			const a = binary.getClosestValues_spec2(spectrum_1, el.mz); //peak in exp // is a reference
+			var is_inside = compare_ppmF(a, el, this.tolerance); // TODO correct here?
 
-		  if(is_inside){
-			  a["matchedFeatures"].push({
-				 "feature": el,
-				 "massError": (a["mz"] -el["mz"]) / el["mz"] * Math.pow(10, 6) // https://github.com/coongroup/IPSA/blob/0b5125a8923d1a1897b61c53390164e7e7c5d356/support/php/NegativeModeAnnotateEntireFile.php#L898
+			if(is_inside){
+				a["matchedFeatures"].push({
+					"feature": el,
+					"massError": (a["mz"] -el["mz"]) / el["mz"] * Math.pow(10, 6) // https://github.com/coongroup/IPSA/blob/0b5125a8923d1a1897b61c53390164e7e7c5d356/support/php/NegativeModeAnnotateEntireFile.php#L898
 
-			  });
-			return(a)
-		  }
+				});
+				return(a)
+			}
 
 
-	  }).filter((el) =>{return el !== undefined});
-	return(spectrum_1);
+		}).filter((el) =>{return el !== undefined});
+		spectrum_1 = spectrum_1.map((el) => {
+			if (el["percentBasePeak"] <= this.cutoff){
+				el["matchedFeatures"] = [];
+			}
+			return el;
+		});
+		return(spectrum_1);
 
 	}
 	generateAminoAcids(sequence, mods){

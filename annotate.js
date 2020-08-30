@@ -171,7 +171,6 @@ const aminoAcids = 	{
 		},
 };
 
-
 const modifications = [
   {
     Name: 'Carbamidomethyl',
@@ -223,7 +222,6 @@ const terminal = {
 const neutral_losses = [{ name: 'h2o', offset: -18.01528 },
   { name: 'nh3', offset: -17.031 },
   { name: 'co2', offset: -44.009 }];
-
 
 const f_apply_nl = function (sequence, neutral_losses) {
   return sequence.reduce((prev, next) => {

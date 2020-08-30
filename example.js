@@ -2,13 +2,11 @@ if (typeof fetch !== 'function') {
   global.fetch = require('node-fetch-polyfill');
 }
 
-
 const d3v4 = require('d3');
 
 console.log('test');
 
 spectrum1 = [[1, 2], [2, 4]];
-
 
 f = function (x) {
   return (Math.floor(10 * x) / 10);
@@ -28,7 +26,6 @@ console.log(postbody);
 
 // console.log(postbody);
 
-
 d3v4.json('https://www.proteomicsdb.org/logic/api/getFragmentationPrediction.xsjs', {
 	          method: 'POST',
   body: JSON.stringify(postbody),
@@ -36,7 +33,6 @@ d3v4.json('https://www.proteomicsdb.org/logic/api/getFragmentationPrediction.xsj
   .catch(() => {
 						     console.log('Promise Rejected');
   });
-
 
 // EQUAL OPERATOR
 // IF IN DOUBT USE 3 x =
@@ -46,7 +42,6 @@ console.log('0' == 0.0);
 console.log('0' === 0.0);
 
 spectrum = [1, 2, 3, 4, 5, 6];
-
 
 // MAP
 multiplied_spectrum = spectrum.map((x) => x * 2);
@@ -65,7 +60,6 @@ g = function (p, n) {
 summed = spectrum.reduce(g, 0);
 console.log(summed);
 
-
 // FILTER
 f = function (x) {
   if (x % 2 === 0) {
@@ -79,7 +73,6 @@ filtered = spectrum.filter((x) => (x % 2 === 0));
 console.log(filtered);
 filtered = spectrum.filter((x) => x % 2 === 0);
 console.log(filtered);
-
 
 // EXAMPLE BINNED SPECTRA
 //
@@ -100,7 +93,6 @@ const groupBy = function (data, key) { // `data` is an array of objects, `key` i
     return storage;
   }, {}); // {} is the initial value of the storage
 };
-
 
 spectrum_binned = [{ mz: 15, intensity: 1 }, { mz: 15, intensity: 2 }, { mz: 20, intensity: 10 }];
 

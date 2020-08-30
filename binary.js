@@ -63,7 +63,6 @@ const full_merge = function (spec1_spec2, spec2_spec1) {
   }));
   const non_duplicated_merged_spectrum = _.uniqBy(mergedSpectrum, 'id');
 
-
   let splice_non_matched = non_duplicated_merged_spectrum.filter((x) => (x.id_1 === -1) || (x.id_2 === -1));
   const splice_matched = non_duplicated_merged_spectrum.filter((x) => (x.id_1 !== -1) && (x.id_2 !== -1));
 
@@ -72,7 +71,7 @@ const full_merge = function (spec1_spec2, spec2_spec1) {
     intensity_1: peakObj.intensity_1,
     mz_1: peakObj.mz_1,
     id_2: -1,
-    intensity_2: -1,
+    intensity_2: 0,
     mz_2: -1,
 
   })), 'id_1');
@@ -81,7 +80,7 @@ const full_merge = function (spec1_spec2, spec2_spec1) {
     intensity_2: peakObj.intensity_2,
     mz_2: peakObj.mz_2,
     id_1: -1,
-    intensity_1: -1,
+    intensity_1: 0,
     mz_1: -1,
 
   })), 'id_2');
@@ -89,10 +88,8 @@ const full_merge = function (spec1_spec2, spec2_spec1) {
     .concat(spliced_matched_add2)
     .concat(splice_non_matched);
 
-
   // remove the -1 stuff for external
   const non_duplicated_merged_spectrum_without_non_matching = splice_matched;
-
 
   let grp1 = groupBy(non_duplicated_merged_spectrum_without_non_matching, 'id_1');
   // with entries -> every entry is a array
@@ -100,9 +97,7 @@ const full_merge = function (spec1_spec2, spec2_spec1) {
   let grp2 = groupBy(grp1, 'id_2');
   grp2 = Object.values(grp2).map((objPeak) => objPeak.reduce((prev, current) => (prev.intensity_1 + prev.intensity_2 > current.intensity_1 + current.intensity_2 ? prev : current), {}));
 
-
   grp2 = grp2.concat(splice_non_matched);
-
 
   grp1 = groupBy(grp2, 'id_1');
   // return grp1["5"];
@@ -197,13 +192,12 @@ const getClosestValues_spec2_FACTORY = function (selection) {
   };
 };
 
-
 const selectMostIntensePeak = function (mergedSpectrum) {
   return mergedSpectrum.map((peakObj) => {
     if (peakObj.id_1.length === 0) {
       var mostIntense	= {
         mz: -1,
-        intensity: -1,
+        intensity: 0,
         id: -1,
       };
     } else {
@@ -255,7 +249,6 @@ const my_sorter = function (attribute, type) {
   };
 };
 
-
 /*
  *peak 1 is always reference (we assume the bottom/predicted one
  * checking for smaller or greater not equal case
@@ -301,7 +294,6 @@ const extract_mzs = function (prev, peak) {
   return (prev);
 };
 
-
 /**
  * solves question of specrum_2 is how much part of 1
  */
@@ -329,7 +321,6 @@ const binary_search_spectrum = function (spectrum_1, spectrum_2) {
   spectrum_1.map(f_peak);
   return (spectrum_2);
 };
-
 
 const binary_full_merge = function (spectrum_1, spectrum_2) {
   merge1 = binary_search_spectrum(spectrum_1, spectrum_2);

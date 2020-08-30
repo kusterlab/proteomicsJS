@@ -6,9 +6,7 @@ const chaiAlmost = require('chai-almost');
 chai.use(chaiAlmost()); // tolerance of 10^-6
 // chai.use(chaiAlmost(0.0001));
 
-
 const { expect } = chai;
-
 
 describe('Similarities', () => {
   let spectrum_exp;
@@ -68,7 +66,7 @@ describe('Similarities', () => {
     });
     it('show special problem', () => {
       const compf = compare.ipsa_helper.comparison.pearson_correlation;
-      expect(0.9819805).to.be.almost(compf(complex_comparison.intensity_1, complex_comparison.intensity_2));
+      expect(0.99099025).to.be.almost(compf(complex_comparison.intensity_1, complex_comparison.intensity_2));
     });
   });
   describe('sa distance', () => {
