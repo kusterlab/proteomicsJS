@@ -1,7 +1,10 @@
 const binary = require('./binary');
 
 Annotation = class Annotation {
-	ChemistryConstants = {
+
+	constructor(request){
+
+	this.ChemistryConstants = {
 		Proton: 1.007276466879,
 		H: 1.00782503223,
 		h: 2.01410177812,
@@ -15,17 +18,17 @@ Annotation = class Annotation {
 		P: 30.97376199842,
 		S: 31.9720711744,
 	};
-	N_TERMINUS = this.ChemistryConstants.H;
-	C_TERMINUS = this.ChemistryConstants.O + this.ChemistryConstants.H;
-	B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
-	A_ION_TERMINUS = this.B_ION_TERMINUS - this.ChemistryConstants.C - this.ChemistryConstants.O; // wiki
-	C_ION_TERMINUS = 4 * this.ChemistryConstants.H + this.ChemistryConstants.N - this.ChemistryConstants.Proton; 
+	this.N_TERMINUS = this.ChemistryConstants.H;
+	this.C_TERMINUS = this.ChemistryConstants.O + this.ChemistryConstants.H;
+this.B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
+	this.A_ION_TERMINUS = this.B_ION_TERMINUS - this.ChemistryConstants.C - this.ChemistryConstants.O; // wiki
+	this.C_ION_TERMINUS = 4 * this.ChemistryConstants.H + this.ChemistryConstants.N - this.ChemistryConstants.Proton; 
 
-	Y_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
-	X_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
-	Y_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
+	this.Y_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
+	this.X_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
+	this.Y_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
 
-	AminoAcids = {
+	this.AminoAcids = {
 		A: 71.037114,
 		C: 103.00919,
 		D: 115.02694,
@@ -48,7 +51,6 @@ Annotation = class Annotation {
 		Y: 163.06333,
 	};
 
-	constructor(request){
 		this.peakData = request["peakData"].map((el, i) =>{
 			return {"mz": el["mZ"],
 				"intensity": el["intensity"],

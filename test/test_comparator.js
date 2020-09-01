@@ -65,16 +65,16 @@ describe('Comparator', () => {
 		    const scores = comparatator.calculate_scores();
 		    const scores_exp = {
 			    full: {
-			    sa: 0.0000706871,
-			    corr: 0.3275740,
+			    sa: 0, // 0.0000706871,
+			    corr: 0.33, // 0.3275740,
 		    },
 			    spec1: {
 			    sa: 1,
 			    corr: 1,
 		    },
 			    spec2: {
-			    sa: 0.0000706871,
-			    corr: 0.3275740,
+			    sa: 0, // 0.0000706871,
+			    corr: 0.33, // 0.3275740,
 		    },
 		    };
 	      expect(scores).to.almost.eql(scores_exp);
