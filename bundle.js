@@ -2,7 +2,10 @@
 const binary = require('./binary');
 
 Annotation = class Annotation {
-	ChemistryConstants = {
+
+	constructor(request){
+
+	this.ChemistryConstants = {
 		Proton: 1.007276466879,
 		H: 1.00782503223,
 		h: 2.01410177812,
@@ -16,17 +19,17 @@ Annotation = class Annotation {
 		P: 30.97376199842,
 		S: 31.9720711744,
 	};
-	N_TERMINUS = this.ChemistryConstants.H;
-	C_TERMINUS = this.ChemistryConstants.O + this.ChemistryConstants.H;
-	B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
-	A_ION_TERMINUS = this.B_ION_TERMINUS - this.ChemistryConstants.C - this.ChemistryConstants.O; // wiki
-	C_ION_TERMINUS = 4 * this.ChemistryConstants.H + this.ChemistryConstants.N - this.ChemistryConstants.Proton; 
+	this.N_TERMINUS = this.ChemistryConstants.H;
+	this.C_TERMINUS = this.ChemistryConstants.O + this.ChemistryConstants.H;
+this.B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
+	this.A_ION_TERMINUS = this.B_ION_TERMINUS - this.ChemistryConstants.C - this.ChemistryConstants.O; // wiki
+	this.C_ION_TERMINUS = 4 * this.ChemistryConstants.H + this.ChemistryConstants.N - this.ChemistryConstants.Proton; 
 
-	Y_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
-	X_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
-	Y_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
+	this.Y_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
+	this.X_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
+	this.Y_ION_TERMINUS = this.ChemistryConstants.Proton + 2* this.ChemistryConstants.H + this.ChemistryConstants.O;
 
-	AminoAcids = {
+	this.AminoAcids = {
 		A: 71.037114,
 		C: 103.00919,
 		D: 115.02694,
@@ -49,7 +52,6 @@ Annotation = class Annotation {
 		Y: 163.06333,
 	};
 
-	constructor(request){
 		this.peakData = request["peakData"].map((el, i) =>{
 			return {"mz": el["mZ"],
 				"intensity": el["intensity"],
@@ -326,50 +328,44 @@ Annotation = class Annotation {
 exports.Annotation = Annotation;
 
 },{"./binary":4}],2:[function(require,module,exports){
-
 const binary = require('./binary');
 const measures = require('./measures');
+
 Comparator = class Comparator {
-	constructor(spectrum_1, spectrum_2, matching_tolerance = 10){
-		this.spectrum_1 = spectrum_1;
-		this.spectrum_2 = spectrum_2;
-		this.matching_tolerance = matching_tolerance;
-		let binarySpectrum_1 = binary.binary_search_spectrum(this.spectrum_1, this.spectrum_2); 
-		let binarySpectrum_2 = binary.binary_search_spectrum(this.spectrum_2, this.spectrum_1);  
+  constructor(spectrum_1, spectrum_2, matching_type = "ppm", matching_tolerance = 10) {
+    this.spectrum_1 = spectrum_1;
+    this.spectrum_2 = spectrum_2;
+    this.matching_tolerance = matching_tolerance;
+    let binarySpectrum_1 = binary.binary_search_spectrum(this.spectrum_1, this.spectrum_2, matching_type, matching_tolerance);
+    let binarySpectrum_2 = binary.binary_search_spectrum(this.spectrum_2, this.spectrum_1, matching_type, matching_tolerance);
 		 binarySpectrum_1 = binary.selectMostIntensePeak(binarySpectrum_1);
 		    binarySpectrum_2 = binary.selectMostIntensePeak(binarySpectrum_2);
-		this.merged_spectrum = binary.full_merge(binarySpectrum_1, binarySpectrum_2); 
+    this.merged_spectrum = binary.full_merge(binarySpectrum_1, binarySpectrum_2);
+  }
 
-	}
-	calculate_scores1(merged_data){
-		let binarySpectrum = {};
-		    binarySpectrum["intensity_1"] = merged_data.map(function(x){
-			          return x.intensity_1
-			        });
-		    binarySpectrum["intensity_2"] = merged_data.map(function(x){
-			          return x.intensity_2
-			        });
-		var result = {};
-		var spectral_angle = measures.ipsa_helper["comparison"]["spectral_angle"](binarySpectrum["intensity_1"], binarySpectrum["intensity_2"]);
-		var pearson_correlation = measures.ipsa_helper["comparison"]["pearson_correlation"](binarySpectrum["intensity_1"], binarySpectrum["intensity_2"]);
-		result["sa"] = Math.round(spectral_angle * 100) / 100;
-		result["corr"] = Math.round(pearson_correlation * 100) / 100;
-		return result;
-	}
-	calculate_scores(){
-		let result = {};
-		result["full"] = this.calculate_scores1(this.merged_spectrum);
-		let sided_merge = this.merged_spectrum.filter((e) =>{return e.id_1 !==-1});
-		result["spec1"] = this.calculate_scores1(sided_merge);
-		 sided_merge = this.merged_spectrum.filter((e) =>{return e.id_2 !==-1});
-		result["spec2"] = this.calculate_scores1(sided_merge);
+  calculate_scores1(merged_data) {
+    const binarySpectrum = {};
+		    binarySpectrum.intensity_1 = merged_data.map((x) => x.intensity_1);
+		    binarySpectrum.intensity_2 = merged_data.map((x) => x.intensity_2);
+    const result = {};
+    const spectral_angle = measures.ipsa_helper.comparison.spectral_angle(binarySpectrum.intensity_1, binarySpectrum.intensity_2);
+    const pearson_correlation = measures.ipsa_helper.comparison.pearson_correlation(binarySpectrum.intensity_1, binarySpectrum.intensity_2);
+    result.sa = Math.round(spectral_angle * 100) / 100;
+    result.corr = Math.round(pearson_correlation * 100) / 100;
+    return result;
+  }
 
+  calculate_scores() {
+    const result = {};
+    result.full = this.calculate_scores1(this.merged_spectrum);
+    let sided_merge = this.merged_spectrum.filter((e) => e.id_1 !== -1);
+    result.spec1 = this.calculate_scores1(sided_merge);
+		 sided_merge = this.merged_spectrum.filter((e) => e.id_2 !== -1);
+    result.spec2 = this.calculate_scores1(sided_merge);
 
-		return result;
-
-	}
-
-}
+    return result;
+  }
+};
 
 },{"./binary":4,"./measures":5}],3:[function(require,module,exports){
 UsiResponse = class UsiResponse {
@@ -414,7 +410,7 @@ UsiResponse = class UsiResponse {
         this.sequence = response.sequence;
         this.precursorCharge = response.charge;
         this.aMz = JSON.parse(response.ms2peaks).map((a) => (a[0]));
-        this.aInt = JSON.parse(response.ms2peaks).map((a) => (a[0]));
+        this.aInt = JSON.parse(response.ms2peaks).map((a) => (a[1]));
         break;
       default:
         //
@@ -690,17 +686,41 @@ compare_ppm_FACTORY = function (property) {
     return (peak2.mz < peak1[property] + error && peak2.mz > peak1[property] - error);
   };
 };
+/* property e.g. mz_2
+ * type ppm/Da
+ * value e.g. 10
+ */
+compare_FACTORY = function (property, type="ppm", value=10) {
+  return function (peak1, peak2) {
+    // asking if peak2 is close to peak1
+    var error;
+    switch(type) {
+	    case "ppm":
+		    error = 1 / Math.pow(10, 6) * value * peak1[property];
+		    break;
+	   case "Da":
+		    error = value;
+		    break;
+           default:
+		    error = 1;
+
+
+    }
+    return (peak2.mz < peak1[property] + error && peak2.mz > peak1[property] - error);
+  };
+};
 
 exports.compare_ppm = compare_ppm_FACTORY('mz');
 exports.my_sorter = my_sorter;
 exports.compare_ppm_FACTORY = compare_ppm_FACTORY;
 
-const generate_searchF = function (spectrum) {
+const generate_searchF = function (spectrum, type="ppm", value=10) {
   return function (peak) {
     getClosestValues_spec2F = getClosestValues_spec2_FACTORY('mz_2');
     a = getClosestValues_spec2F(spectrum, peak.mz);
-    compare_ppmF = compare_ppm_FACTORY('mz_2');
-    is_inside = compare_ppmF(a, peak, 10); // TODO correct here?
+    // compare_ppmF = compare_ppm_FACTORY('mz_2');
+    compare_F = compare_FACTORY('mz_2', type, value);
+    is_inside = compare_F(a, peak); // TODO correct here?
     if (is_inside) {
       a.intensity_1.push(peak.intensity);
       a.mz_1.push(peak.mz);
@@ -726,7 +746,7 @@ const extract_mzs = function (prev, peak) {
 /**
  * solves question of specrum_2 is how much part of 1
  */
-const binary_search_spectrum = function (spectrum_1, spectrum_2) {
+const binary_search_spectrum = function (spectrum_1, spectrum_2, type="ppm", value=10) {
   const sorter_asc_mz = my_sorter('mz', 'asc');
   spectrum_2 = spectrum_2.sort(sorter_asc_mz);
   spectrum_2 = spectrum_2.map((peak, i) => ({
@@ -746,7 +766,7 @@ const binary_search_spectrum = function (spectrum_1, spectrum_2) {
     intensity: peak.intensity,
   }));
 
-  const f_peak = generate_searchF(spectrum_2);
+  const f_peak = generate_searchF(spectrum_2, type, value);
   spectrum_1.map(f_peak);
   return (spectrum_2);
 };
@@ -1127,7 +1147,7 @@ const ipsa_helper = {
       let norm_a = 0;
       let b = 0;
       let norm_b = 0;
-      
+
       // norm_2 (x)	sqrt (sum |xi|2 )
       for (let n = 0; n < spectrum_1.length; n++) {
         a += Math.pow(spectrum_1[n], 2);
@@ -1153,10 +1173,9 @@ const ipsa_helper = {
         ysum += Math.pow((spectrum_2[n] - yavg), 2);
       }
       // return (sum / Math.sqrt(xsum * ysum));
-      let result =  (0.5 *( 1 + (sum / Math.sqrt(xsum * ysum))));
+      const result = (0.5 * (1 + (sum / Math.sqrt(xsum * ysum))));
 
-      return isNaN(result)? 1 : result;
-
+      return isNaN(result) ? 1 : result;
     },
   },
 

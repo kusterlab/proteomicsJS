@@ -83,10 +83,10 @@ this.B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
 			this.mods);
 		this.response["modifications"] =this.mods;
 		this.tolerance = request["tolerance"];
-		this.peaks = this.annotatePeaks();
 		this.sequence = request["sequence"];
 		this.isPPM =  request.toleranceType === 'ppm';
 		this.fragmentTypes = request.fragmentTypes;
+		this.peaks = this.annotatePeaks();
 		this.modifications = [];// this.generateModifications();
 		this.modifications = new Array(this.sequence.length + 2).fill(undefined).map((e, i) =>{
 			return {
@@ -157,11 +157,11 @@ this.B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
 		})
 		// var spectrum_1 = answer; // we search in the calculated values
 		const sorter_asc_mz = binary.my_sorter('mz', 'asc');
-		var compare_ppmF = binary.compare_ppm_FACTORY('mz');
+		var compare_F = binary.compare_FACTORY('mz', this.isPPM? "ppm" : "Da", this.tolerance);
 		var spectrum_1 = spectrum_1.sort(sorter_asc_mz);
 		const bla = this.response["fragments"].map((el) =>{ // el are calculated frags
 			const a = binary.getClosestValues_spec2(spectrum_1, el.mz); //peak in exp // is a reference
-			var is_inside = compare_ppmF(a, el, this.tolerance); // TODO correct here?
+			var is_inside = compare_F(a, el); // TODO correct here?
 
 			if(is_inside){
 				a["matchedFeatures"].push({

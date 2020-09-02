@@ -261,17 +261,42 @@ compare_ppm_FACTORY = function (property) {
     return (peak2.mz < peak1[property] + error && peak2.mz > peak1[property] - error);
   };
 };
+/* property e.g. mz_2
+ * type ppm/Da
+ * value e.g. 10
+ */
+compare_FACTORY = function (property, type="ppm", value=10) {
+  return function (peak1, peak2) {
+    // asking if peak2 is close to peak1
+    var error;
+    switch(type) {
+	    case "ppm":
+		    error = 1 / Math.pow(10, 6) * value * peak1[property];
+		    break;
+	   case "Da":
+		    error = value;
+		    break;
+           default:
+		    error = 1;
+
+
+    }
+    return (peak2.mz < peak1[property] + error && peak2.mz > peak1[property] - error);
+  };
+};
 
 exports.compare_ppm = compare_ppm_FACTORY('mz');
 exports.my_sorter = my_sorter;
 exports.compare_ppm_FACTORY = compare_ppm_FACTORY;
+exports.compare_FACTORY = compare_FACTORY;
 
-const generate_searchF = function (spectrum) {
+const generate_searchF = function (spectrum, type="ppm", value=10) {
   return function (peak) {
     getClosestValues_spec2F = getClosestValues_spec2_FACTORY('mz_2');
     a = getClosestValues_spec2F(spectrum, peak.mz);
-    compare_ppmF = compare_ppm_FACTORY('mz_2');
-    is_inside = compare_ppmF(a, peak, 10); // TODO correct here?
+    // compare_ppmF = compare_ppm_FACTORY('mz_2');
+    compare_F = compare_FACTORY('mz_2', type, value);
+    is_inside = compare_F(a, peak); // TODO correct here?
     if (is_inside) {
       a.intensity_1.push(peak.intensity);
       a.mz_1.push(peak.mz);
@@ -297,7 +322,7 @@ const extract_mzs = function (prev, peak) {
 /**
  * solves question of specrum_2 is how much part of 1
  */
-const binary_search_spectrum = function (spectrum_1, spectrum_2) {
+const binary_search_spectrum = function (spectrum_1, spectrum_2, type="ppm", value=10) {
   const sorter_asc_mz = my_sorter('mz', 'asc');
   spectrum_2 = spectrum_2.sort(sorter_asc_mz);
   spectrum_2 = spectrum_2.map((peak, i) => ({
@@ -317,7 +342,7 @@ const binary_search_spectrum = function (spectrum_1, spectrum_2) {
     intensity: peak.intensity,
   }));
 
-  const f_peak = generate_searchF(spectrum_2);
+  const f_peak = generate_searchF(spectrum_2, type, value);
   spectrum_1.map(f_peak);
   return (spectrum_2);
 };

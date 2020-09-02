@@ -2,12 +2,12 @@ const binary = require('./binary');
 const measures = require('./measures');
 
 Comparator = class Comparator {
-  constructor(spectrum_1, spectrum_2, matching_tolerance = 10) {
+  constructor(spectrum_1, spectrum_2, matching_type = "ppm", matching_tolerance = 10) {
     this.spectrum_1 = spectrum_1;
     this.spectrum_2 = spectrum_2;
     this.matching_tolerance = matching_tolerance;
-    let binarySpectrum_1 = binary.binary_search_spectrum(this.spectrum_1, this.spectrum_2);
-    let binarySpectrum_2 = binary.binary_search_spectrum(this.spectrum_2, this.spectrum_1);
+    let binarySpectrum_1 = binary.binary_search_spectrum(this.spectrum_1, this.spectrum_2, matching_type, matching_tolerance);
+    let binarySpectrum_2 = binary.binary_search_spectrum(this.spectrum_2, this.spectrum_1, matching_type, matching_tolerance);
 		 binarySpectrum_1 = binary.selectMostIntensePeak(binarySpectrum_1);
 		    binarySpectrum_2 = binary.selectMostIntensePeak(binarySpectrum_2);
     this.merged_spectrum = binary.full_merge(binarySpectrum_1, binarySpectrum_2);
