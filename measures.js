@@ -244,39 +244,8 @@ grouping_f = function (list_o) {
 };
 // second element of ever elment is the list of objects. first element just the grouping key
 
-reduce_aligned_spectrum_to_comparison_in = function (prev, next) {
-  prev.intensity_1.push(next.intensity_1);
-  prev.intensity_2.push(next.intensity_2);
-  return (prev);
-  // in: [{"intensity_1": 1, "intensity_2": 2}, .....]
-};
 
 const ipsa_helper = {
-  binning:
-	f = function (spectrum) {
-	  // summed spectrum by rounding and grouping
-	  // returns
-	  // [{"mz": v1, "intensity": v2}, ...]
-	  grouped_spectrum = groupBy(spectrum.map(add_rounding), 'mz_round');
-	  s = Object.entries(grouped_spectrum).map(grouping_f);
-	  return (s);
-	},
-  aligning(spectrum_1, spectrum_2) {
-    // aligns two spectra by exptracting "mz"
-    // creating unique set of mz ("exact case)
-
-    spectrum_1_simple = spectrum_1.reduce(extract_mz, {});
-    spectrum_2_simple = spectrum_2.reduce(extract_mz, {});
-    mz_value1 = spectrum_1.map((x) => x.mz);
-    mz_value2 = spectrum_2.map((x) => x.mz);
-    mz_set = [...new Set(mz_value1.concat(mz_value2))];
-    mz_set = mz_value2; // TODO explain why this is not the exact case
-
-    aligned_spectrum = mz_set.map(z); // fill with 0
-    aligned_spectrum2 = aligned_spectrum.reduce(reduce_aligned_spectrum_to_comparison_in, { intensity_1: [], intensity_2: [] });
-    return (aligned_spectrum2);
-    //		necessary_dot = aligned_spectrum.map(f2 ).reduce(reducer,{"sum_1_m_1" : 0, "sum_2_m_2": 0, "sum_1_m_2" : 0}
-  },
   comparison: {
     // https://brenocon.com/blog/2012/03/cosine-similarity-pearson-correlation-and-ols-coefficients/
     // All functions in here must comply to
@@ -322,27 +291,6 @@ const ipsa_helper = {
         return (0);
       }
       return (1 - 2 * Math.acos(dot_help) / Math.PI);
-    },
-    euclidean_distance(spectrum_1, spectrum_2) {
-      let rangesum = 0;
-      let sum = 0;
-      let n;
-      for (n = 0; n < spectrum_1.length; n++) {
-        sum += Math.pow(spectrum_1[n] - spectrum_2[n], 2);
-        const values = [spectrum_1[n], spectrum_2[n]];
-        rangesum += Math.pow(Math.max(...values), 2);
-      }
-      return (1 - Math.sqrt(sum / rangesum));
-    },
-    bray_curtis_distance(spectrum_1, spectrum_2) {
-      let difference = 0;
-      let sum = 0;
-      let n;
-      for (n = 0; n < spectrum_1.length; n++) {
-        difference += Math.abs(spectrum_1[n] - spectrum_2[n]);
-        sum += Math.abs(spectrum_1[n] + spectrum_2[n]);
-      }
-      return (1 - (difference / sum));
     },
     pearson_correlation(spectrum_1, spectrum_2) {
       let a = 0;

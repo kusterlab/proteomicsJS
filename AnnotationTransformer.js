@@ -100,27 +100,6 @@ this.B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
 			}
 		});
 	}
-	generateModifications(){
-		let n_term = this.modification.filter(e => {return e.index ==-1});
-		let c_term = this.modification.filter(e => {return e.index ==this.sequence.length + 1});
-		return n_term.concat(c_term);
-
-		/*
-			return(
-				{"mass": this.AminoAcids[e],
-					"modification": {
-						"deltaElement": null,
-						"deltaMass": 0 + m,
-						"site": i 
-					},
-					"name": e
-				});
-				*/
-		//		var n_term = this.modification.filter((e) =>{e.index ===-1});
-		var seq_part = this.aminoAcids.map((el) =>{return el.modification}) ;
-		return this.allMassOffset.concat(seq_part);
-
-	}
 	
 
 	fakeAPI(){
