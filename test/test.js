@@ -64,9 +64,17 @@ describe('Similarities', () => {
       const compf = compare.ipsa_helper.comparison.pearson_correlation;
       expect(1).to.be.almost(compf(comparison.intensity_1, comparison.intensity_2));
     });
+    it('should return 0 when spectrum is not the same', () => {
+	// R cor(c(1,0,0), c(0,0,1))
+      const compf = compare.ipsa_helper.comparison.pearson_correlation;
+	    var spec1 = [0,0,1];
+	    var spec2 = [1,0,0];
+      expect(-0.5).to.be.almost(compf(spec1, spec2));
+    });
+
     it('show special problem', () => {
       const compf = compare.ipsa_helper.comparison.pearson_correlation;
-      expect(0.99099025).to.be.almost(compf(complex_comparison.intensity_1, complex_comparison.intensity_2));
+      expect(0.9819805).to.be.almost(compf(complex_comparison.intensity_1, complex_comparison.intensity_2));
     });
   });
   describe('sa distance', () => {

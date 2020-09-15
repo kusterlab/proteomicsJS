@@ -39,7 +39,7 @@ var binarySearch = function (arr, target) {
   }
 };
 
-const full_merge = function (spec1_spec2, spec2_spec1) {
+full_merge = function (spec1_spec2, spec2_spec1) {
   // first swap labels
   spec2_spec1 = spec2_spec1.map((peakObj) => ({
     id_1: peakObj.id_2,
@@ -133,7 +133,7 @@ const full_merge = function (spec1_spec2, spec2_spec1) {
   // TODO: simplify to oneliner
 };
 
-const getClosestValues = function (a, x) {
+getClosestValues = function (a, x) {
   let lo = -1; let
     hi = a.length;
   while (hi - lo > 1) {
@@ -148,7 +148,7 @@ const getClosestValues = function (a, x) {
   return [a[lo], a[hi]];
 };
 
-const getClosestValues_specF = function (property) {
+getClosestValues_specF = function (property) {
   return function (a, x) {
     let lo = -1; let
       hi = a.length;
@@ -165,7 +165,7 @@ const getClosestValues_specF = function (property) {
   };
 };
 // x is a m/z value
-const getClosestValues_spec = function (a, x) {
+getClosestValues_spec = function (a, x) {
   let lo = -1; let
     hi = a.length;
   while (hi - lo > 1) {
@@ -180,7 +180,7 @@ const getClosestValues_spec = function (a, x) {
   return [a[lo], a[hi]];
 };
 
-const getClosestValues_spec2_FACTORY = function (selection) {
+getClosestValues_spec2_FACTORY = function (selection) {
   return function (a, x) {
     /*
 		 * ppm part
@@ -192,7 +192,7 @@ const getClosestValues_spec2_FACTORY = function (selection) {
   };
 };
 
-const selectMostIntensePeak = function (mergedSpectrum) {
+selectMostIntensePeak = function (mergedSpectrum) {
   return mergedSpectrum.map((peakObj) => {
     if (peakObj.id_1.length === 0) {
       var mostIntense	= {
@@ -218,7 +218,7 @@ const selectMostIntensePeak = function (mergedSpectrum) {
   });
 };
 
-const getClosestValues_spec2 = getClosestValues_spec2_FACTORY('mz');
+getClosestValues_spec2 = getClosestValues_spec2_FACTORY('mz');
 
 var binarySearch_spec = function (arr, target) {
   const midpoint = Math.floor(arr.length / 2);
@@ -237,7 +237,7 @@ var binarySearch_spec = function (arr, target) {
   }
 };
 
-const my_sorter = function (attribute, type) {
+my_sorter = function (attribute, type) {
   return function (peak1, peak2) {
     if (peak1[attribute] > peak2[attribute]) {
       return type === 'asc' ? 1 : -1;
@@ -278,10 +278,11 @@ compare_FACTORY = function (property, type="ppm", value=10) {
 		    break;
            default:
 		    error = 1;
+		    throw "Error";
 
 
     }
-    return (peak2.mz < peak1[property] + error && peak2.mz > peak1[property] - error);
+    return (peak2.mz <= (peak1[property] + error) && peak2.mz >= (peak1[property] - error));
   };
 };
 
@@ -290,7 +291,7 @@ exports.my_sorter = my_sorter;
 exports.compare_ppm_FACTORY = compare_ppm_FACTORY;
 exports.compare_FACTORY = compare_FACTORY;
 
-const generate_searchF = function (spectrum, type="ppm", value=10) {
+generate_searchF = function (spectrum, type="ppm", value=10) {
   return function (peak) {
     getClosestValues_spec2F = getClosestValues_spec2_FACTORY('mz_2');
     a = getClosestValues_spec2F(spectrum, peak.mz);
@@ -309,11 +310,11 @@ const generate_searchF = function (spectrum, type="ppm", value=10) {
     //	return false;
   };
 };
-const add_exp_flag = function (peak) {
+add_exp_flag = function (peak) {
   peak.intensity_2 = 0;
   return (peak);
 };
-const extract_mzs = function (prev, peak) {
+extract_mzs = function (prev, peak) {
   prev.intensity_1.push(peak.exp_intensity);
   prev.intensity_2.push(peak.intensity);
   return (prev);
@@ -322,7 +323,7 @@ const extract_mzs = function (prev, peak) {
 /**
  * solves question of specrum_2 is how much part of 1
  */
-const binary_search_spectrum = function (spectrum_1, spectrum_2, type="ppm", value=10) {
+binary_search_spectrum = function (spectrum_1, spectrum_2, type="ppm", value=10) {
   const sorter_asc_mz = my_sorter('mz', 'asc');
   spectrum_2 = spectrum_2.sort(sorter_asc_mz);
   spectrum_2 = spectrum_2.map((peak, i) => ({
@@ -347,7 +348,7 @@ const binary_search_spectrum = function (spectrum_1, spectrum_2, type="ppm", val
   return (spectrum_2);
 };
 
-const binary_full_merge = function (spectrum_1, spectrum_2) {
+binary_full_merge = function (spectrum_1, spectrum_2) {
   merge1 = binary_search_spectrum(spectrum_1, spectrum_2);
   merge2 = binary_search_spectrum(spectrum_2, spectrum_1);
   to_add_1 = merge2.intensity_1.filter((x, i) => x === 0);

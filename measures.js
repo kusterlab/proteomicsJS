@@ -375,9 +375,8 @@ const ipsa_helper = {
         ysum += Math.pow((spectrum_2[n] - yavg), 2);
       }
       // return (sum / Math.sqrt(xsum * ysum));
-      const result = (0.5 * (1 + (sum / Math.sqrt(xsum * ysum))));
-
-      return isNaN(result) ? 1 : result;
+      const result =  (sum / Math.sqrt(xsum * ysum));
+      return result;
     },
   },
 

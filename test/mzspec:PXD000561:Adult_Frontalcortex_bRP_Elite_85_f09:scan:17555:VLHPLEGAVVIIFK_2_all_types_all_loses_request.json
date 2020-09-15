@@ -1,0 +1,2329 @@
+{
+  "sequence": "VLHPLEGAVVIIFK",
+  "precursorCharge": "2",
+  "charge": 2,
+  "fragmentTypes": {
+    "a": {
+      "selected": true,
+      "color": "#820cad",
+      "label": "a"
+    },
+    "b": {
+      "selected": true,
+      "color": "#0d75bc",
+      "label": "b"
+    },
+    "c": {
+      "selected": true,
+      "color": "#07a14a",
+      "label": "c"
+    },
+    "C": {
+      "selected": false,
+      "color": "#035729",
+      "label": "c-1"
+    },
+    "x": {
+      "selected": true,
+      "color": "#d1e02d",
+      "label": "x"
+    },
+    "y": {
+      "selected": true,
+      "color": "#be202d",
+      "label": "y"
+    },
+    "z": {
+      "selected": true,
+      "color": "#f79420",
+      "label": "z•"
+    },
+    "Z": {
+      "selected": false,
+      "color": "#A16016",
+      "label": "z+1"
+    },
+    "H2O": {
+      "selected": true
+    },
+    "NH3": {
+      "selected": true
+    },
+    "HPO3": {
+      "selected": false
+    },
+    "CO2": {
+      "selected": true
+    },
+    "precursor": {
+      "selected": true,
+      "color": "#666666"
+    },
+    "unassigned": {
+      "selected": true,
+      "color": "#a6a6a6"
+    }
+  },
+  "peakData": [
+    {
+      "mZ": 110.0712,
+      "intensity": 91.2
+    },
+    {
+      "mZ": 111.0682,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 111.0745,
+      "intensity": 3.5
+    },
+    {
+      "mZ": 111.2657,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 112.087,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 115.0866,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 116.4979,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 118.0746,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 118.2988,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 120.0808,
+      "intensity": 14.8
+    },
+    {
+      "mZ": 122.0714,
+      "intensity": 3
+    },
+    {
+      "mZ": 122.6864,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 125.0711,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 126.6215,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 127.0864,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 129.1023,
+      "intensity": 15.3
+    },
+    {
+      "mZ": 130.0651,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 130.0863,
+      "intensity": 9.1
+    },
+    {
+      "mZ": 130.1059,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 131.1331,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 132.0811,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 136.0758,
+      "intensity": 2.5
+    },
+    {
+      "mZ": 137.079,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 138.0663,
+      "intensity": 3.3
+    },
+    {
+      "mZ": 139.6397,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 141.1024,
+      "intensity": 1.8
+    },
+    {
+      "mZ": 143.118,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 147.113,
+      "intensity": 21.1
+    },
+    {
+      "mZ": 148.1164,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 148.1478,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 149.6271,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 150.0661,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 154.0614,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 155.0816,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 155.5276,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 156.0772,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 157.1338,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 158.0924,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 159.0919,
+      "intensity": 1
+    },
+    {
+      "mZ": 164.1183,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 166.0611,
+      "intensity": 2.6
+    },
+    {
+      "mZ": 166.9362,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 167.0817,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 169.0973,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 169.1337,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 171.1131,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 171.1496,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 172.0715,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 173.0924,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 173.1287,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 173.3859,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 175.1191,
+      "intensity": 2.9
+    },
+    {
+      "mZ": 178.1343,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 179.989,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 180.0238,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 183.1131,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 183.1493,
+      "intensity": 10.2
+    },
+    {
+      "mZ": 184.1528,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 185.165,
+      "intensity": 7.7
+    },
+    {
+      "mZ": 186.0874,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 186.1235,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 186.1687,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 186.4963,
+      "intensity": 0.2
+    },
+    {
+      "mZ": 187.0712,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 187.1078,
+      "intensity": 1.1
+    },
+    {
+      "mZ": 198.1243,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 199.1445,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 199.1808,
+      "intensity": 1.7
+    },
+    {
+      "mZ": 201.0873,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 201.1238,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 204.1344,
+      "intensity": 5.1
+    },
+    {
+      "mZ": 207.1607,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 211.1443,
+      "intensity": 8.3
+    },
+    {
+      "mZ": 212.1479,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 212.1762,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 213.1599,
+      "intensity": 3.9
+    },
+    {
+      "mZ": 214.1189,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 214.1634,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 215.103,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 215.1392,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 216.0979,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 216.1346,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 223.1081,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 223.1554,
+      "intensity": 2.6
+    },
+    {
+      "mZ": 225.1599,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 226.1188,
+      "intensity": 2.2
+    },
+    {
+      "mZ": 227.1028,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 227.1757,
+      "intensity": 2.3
+    },
+    {
+      "mZ": 228.1343,
+      "intensity": 2.4
+    },
+    {
+      "mZ": 228.1706,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 229.1552,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 231.149,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 233.1402,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 233.1649,
+      "intensity": 4.9
+    },
+    {
+      "mZ": 234.1242,
+      "intensity": 2.9
+    },
+    {
+      "mZ": 234.1685,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 235.1191,
+      "intensity": 11.1
+    },
+    {
+      "mZ": 235.1557,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 236.1034,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 236.1236,
+      "intensity": 1.1
+    },
+    {
+      "mZ": 238.1185,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 240.1346,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 242.1501,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 243.1341,
+      "intensity": 1
+    },
+    {
+      "mZ": 245.1301,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 247.1199,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 249.1601,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 251.1505,
+      "intensity": 8.4
+    },
+    {
+      "mZ": 252.1545,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 253.9947,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 256.0928,
+      "intensity": 1
+    },
+    {
+      "mZ": 256.1445,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 258.1089,
+      "intensity": 1.8
+    },
+    {
+      "mZ": 258.1448,
+      "intensity": 1.8
+    },
+    {
+      "mZ": 259.1453,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 260.1966,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 261.1348,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 261.1568,
+      "intensity": 4.2
+    },
+    {
+      "mZ": 262.1629,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 263.1143,
+      "intensity": 1.1
+    },
+    {
+      "mZ": 265.1,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 270.1812,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 271.129,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 274.1183,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 275.1717,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 276.1339,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 276.1559,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 276.1709,
+      "intensity": 4.8
+    },
+    {
+      "mZ": 277.1557,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 277.1745,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 277.2028,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 279.0977,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 279.1454,
+      "intensity": 7.2
+    },
+    {
+      "mZ": 280.1494,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 282.1458,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 282.7924,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 284.1027,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 284.1393,
+      "intensity": 2
+    },
+    {
+      "mZ": 284.1602,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 286.1389,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 287.2404,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 288.2029,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 289.2028,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 289.7665,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 293.1132,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 294.1815,
+      "intensity": 40
+    },
+    {
+      "mZ": 295.185,
+      "intensity": 4.6
+    },
+    {
+      "mZ": 297.1558,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 299.2083,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 300.1556,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 301.1873,
+      "intensity": 5.8
+    },
+    {
+      "mZ": 302.1138,
+      "intensity": 2.7
+    },
+    {
+      "mZ": 302.1911,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 304.1632,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 304.2131,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 305.1971,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 306.2291,
+      "intensity": 10.2
+    },
+    {
+      "mZ": 306.5656,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 307.1413,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 307.2321,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 310.14,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 310.1765,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 310.2128,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 311.1708,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 311.2076,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 312.1555,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 312.1748,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 312.1922,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 312.2281,
+      "intensity": 2.6
+    },
+    {
+      "mZ": 313.1867,
+      "intensity": 1.8
+    },
+    {
+      "mZ": 321.6864,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 322.0862,
+      "intensity": 1.9
+    },
+    {
+      "mZ": 322.1218,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 322.2238,
+      "intensity": 1.9
+    },
+    {
+      "mZ": 325.1891,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 326.1718,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 326.2441,
+      "intensity": 2.1
+    },
+    {
+      "mZ": 327.203,
+      "intensity": 6.2
+    },
+    {
+      "mZ": 328.2067,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 329.1818,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 330.1302,
+      "intensity": 2.5
+    },
+    {
+      "mZ": 330.1671,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 330.1928,
+      "intensity": 3.8
+    },
+    {
+      "mZ": 330.6638,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 331.1956,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 332.2085,
+      "intensity": 21.8
+    },
+    {
+      "mZ": 333.2116,
+      "intensity": 2.5
+    },
+    {
+      "mZ": 334.1728,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 337.1512,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 339.1662,
+      "intensity": 1.5
+    },
+    {
+      "mZ": 339.2031,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 340.1867,
+      "intensity": 11.7
+    },
+    {
+      "mZ": 341.192,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 341.218,
+      "intensity": 1
+    },
+    {
+      "mZ": 342.1312,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 343.1954,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 345.1577,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 345.191,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 347.1922,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 348.2053,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 350.2189,
+      "intensity": 100
+    },
+    {
+      "mZ": 351.2223,
+      "intensity": 14.5
+    },
+    {
+      "mZ": 352.1332,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 352.2233,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 352.6896,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 353.1822,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 355.1618,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 357.1767,
+      "intensity": 4.8
+    },
+    {
+      "mZ": 358.2088,
+      "intensity": 15.3
+    },
+    {
+      "mZ": 359.2128,
+      "intensity": 1.8
+    },
+    {
+      "mZ": 361.1887,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 362.2032,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 367.1789,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 368.1923,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 370.1862,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 371.1929,
+      "intensity": 1.6
+    },
+    {
+      "mZ": 373.1506,
+      "intensity": 1.7
+    },
+    {
+      "mZ": 373.1874,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 374.2441,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 375.1765,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 376.1983,
+      "intensity": 2.6
+    },
+    {
+      "mZ": 381.2132,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 383.1722,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 383.2661,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 393.1598,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 393.2186,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 395.2656,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 397.2079,
+      "intensity": 4.8
+    },
+    {
+      "mZ": 398.1825,
+      "intensity": 4.3
+    },
+    {
+      "mZ": 398.2107,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 399.1859,
+      "intensity": 1
+    },
+    {
+      "mZ": 402.2242,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 403.5387,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 407.2654,
+      "intensity": 14.7
+    },
+    {
+      "mZ": 408.1396,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 408.2296,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 408.2681,
+      "intensity": 2.5
+    },
+    {
+      "mZ": 409.022,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 409.1706,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 409.2075,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 409.231,
+      "intensity": 1.7
+    },
+    {
+      "mZ": 409.732,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 410.2379,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 410.6465,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 411.2247,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 412.2558,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 412.2934,
+      "intensity": 1.1
+    },
+    {
+      "mZ": 413.2176,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 414.2358,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 421.1538,
+      "intensity": 2.1
+    },
+    {
+      "mZ": 422.1568,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 422.194,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 422.2396,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 423.2043,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 423.227,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 424.1994,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 425.2405,
+      "intensity": 1.7
+    },
+    {
+      "mZ": 425.3118,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 426.2392,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 426.8474,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 427.2378,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 428.2496,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 431.2363,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 432.3002,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 436.2211,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 438.2352,
+      "intensity": 1.9
+    },
+    {
+      "mZ": 439.2176,
+      "intensity": 1.7
+    },
+    {
+      "mZ": 439.2552,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 440.2505,
+      "intensity": 5.7
+    },
+    {
+      "mZ": 440.2863,
+      "intensity": 7
+    },
+    {
+      "mZ": 441.2534,
+      "intensity": 1.5
+    },
+    {
+      "mZ": 441.2867,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 442.267,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 444.7689,
+      "intensity": 1
+    },
+    {
+      "mZ": 446.2608,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 447.271,
+      "intensity": 1.5
+    },
+    {
+      "mZ": 448.2546,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 449.1847,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 449.7603,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 450.2345,
+      "intensity": 1
+    },
+    {
+      "mZ": 453.2704,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 454.302,
+      "intensity": 1
+    },
+    {
+      "mZ": 456.2456,
+      "intensity": 6
+    },
+    {
+      "mZ": 457.2481,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 458.7661,
+      "intensity": 4.1
+    },
+    {
+      "mZ": 459.2348,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 459.2674,
+      "intensity": 1.8
+    },
+    {
+      "mZ": 465.1973,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 468.2455,
+      "intensity": 22.1
+    },
+    {
+      "mZ": 469.2189,
+      "intensity": 2.4
+    },
+    {
+      "mZ": 469.2485,
+      "intensity": 3.9
+    },
+    {
+      "mZ": 470.1371,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 470.2235,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 470.26,
+      "intensity": 2
+    },
+    {
+      "mZ": 471.264,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 471.4694,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 473.3125,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 477.2459,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 486.2329,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 487.2549,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 490.3924,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 494.2038,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 494.251,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 494.3009,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 496.3486,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 498.2929,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 505.278,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 506.205,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 508.3009,
+      "intensity": 2.3
+    },
+    {
+      "mZ": 508.8021,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 511.2648,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 511.3229,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 515.2706,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 515.7448,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 515.811,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 520.3493,
+      "intensity": 10.3
+    },
+    {
+      "mZ": 521.3107,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 521.3536,
+      "intensity": 2.3
+    },
+    {
+      "mZ": 522.293,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 524.3059,
+      "intensity": 1.7
+    },
+    {
+      "mZ": 525.3093,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 525.375,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 526.2654,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 527.182,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 530.33,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 532.359,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 534.2386,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 534.2702,
+      "intensity": 1
+    },
+    {
+      "mZ": 537.3403,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 539.3188,
+      "intensity": 10.3
+    },
+    {
+      "mZ": 540.3232,
+      "intensity": 1.8
+    },
+    {
+      "mZ": 541.3353,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 542.3361,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 547.2171,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 549.303,
+      "intensity": 2.1
+    },
+    {
+      "mZ": 550.3091,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 551.3191,
+      "intensity": 1
+    },
+    {
+      "mZ": 553.2968,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 553.3708,
+      "intensity": 2.6
+    },
+    {
+      "mZ": 554.2468,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 554.3748,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 560.3547,
+      "intensity": 2.5
+    },
+    {
+      "mZ": 561.3579,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 562.269,
+      "intensity": 4.7
+    },
+    {
+      "mZ": 563.2737,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 564.2466,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 567.3138,
+      "intensity": 37.4
+    },
+    {
+      "mZ": 568.3171,
+      "intensity": 8.8
+    },
+    {
+      "mZ": 569.3294,
+      "intensity": 7.6
+    },
+    {
+      "mZ": 570.3339,
+      "intensity": 1.6
+    },
+    {
+      "mZ": 571.269,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 577.3093,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 581.239,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 581.3286,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 583.3454,
+      "intensity": 1
+    },
+    {
+      "mZ": 587.2932,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 587.3593,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 588.2935,
+      "intensity": 1
+    },
+    {
+      "mZ": 590.3318,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 593.3658,
+      "intensity": 4.4
+    },
+    {
+      "mZ": 593.8676,
+      "intensity": 2.5
+    },
+    {
+      "mZ": 594.3691,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 599.2911,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 605.3068,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 606.3057,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 611.3726,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 616.2885,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 617.2938,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 619.2922,
+      "intensity": 2.2
+    },
+    {
+      "mZ": 619.4185,
+      "intensity": 7.3
+    },
+    {
+      "mZ": 620.2963,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 620.4194,
+      "intensity": 2.2
+    },
+    {
+      "mZ": 637.3927,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 638.3877,
+      "intensity": 7
+    },
+    {
+      "mZ": 639.3892,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 648.3105,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 648.3717,
+      "intensity": 1.6
+    },
+    {
+      "mZ": 652.4017,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 652.8903,
+      "intensity": 9
+    },
+    {
+      "mZ": 653.391,
+      "intensity": 6
+    },
+    {
+      "mZ": 653.8941,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 654.4176,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 658.3659,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 661.4035,
+      "intensity": 1
+    },
+    {
+      "mZ": 661.895,
+      "intensity": 5.2
+    },
+    {
+      "mZ": 662.3979,
+      "intensity": 2.4
+    },
+    {
+      "mZ": 662.8958,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 663.3126,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 666.3826,
+      "intensity": 39.2
+    },
+    {
+      "mZ": 667.3854,
+      "intensity": 10.6
+    },
+    {
+      "mZ": 668.389,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 676.3782,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 680.3981,
+      "intensity": 6
+    },
+    {
+      "mZ": 681.4005,
+      "intensity": 1.6
+    },
+    {
+      "mZ": 682.4125,
+      "intensity": 3.3
+    },
+    {
+      "mZ": 683.4166,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 684.3576,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 686.3627,
+      "intensity": 1.9
+    },
+    {
+      "mZ": 686.8438,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 687.3686,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 689.3985,
+      "intensity": 3.8
+    },
+    {
+      "mZ": 690.3592,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 690.4081,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 696.4237,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 704.3734,
+      "intensity": 6.2
+    },
+    {
+      "mZ": 705.377,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 712.3774,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 712.4236,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 716.3995,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 718.4359,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 718.4857,
+      "intensity": 3.2
+    },
+    {
+      "mZ": 719.4893,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 722.8954,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 746.4221,
+      "intensity": 2.1
+    },
+    {
+      "mZ": 747.425,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 751.4713,
+      "intensity": 3.1
+    },
+    {
+      "mZ": 752.475,
+      "intensity": 1.1
+    },
+    {
+      "mZ": 757.4359,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 759.3774,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 759.8826,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 761.4579,
+      "intensity": 1.7
+    },
+    {
+      "mZ": 767.3729,
+      "intensity": 1.7
+    },
+    {
+      "mZ": 767.4279,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 767.8909,
+      "intensity": 1.1
+    },
+    {
+      "mZ": 767.9744,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 768.3308,
+      "intensity": 3.7
+    },
+    {
+      "mZ": 768.3969,
+      "intensity": 1.8
+    },
+    {
+      "mZ": 768.435,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 772.4327,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 775.4491,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 779.4668,
+      "intensity": 23.1
+    },
+    {
+      "mZ": 780.4702,
+      "intensity": 8.1
+    },
+    {
+      "mZ": 781.4731,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 785.4297,
+      "intensity": 3.8
+    },
+    {
+      "mZ": 786.4332,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 789.4626,
+      "intensity": 1.5
+    },
+    {
+      "mZ": 789.5237,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 793.4799,
+      "intensity": 1.6
+    },
+    {
+      "mZ": 795.4964,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 799.3546,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 799.4465,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 803.4415,
+      "intensity": 9.7
+    },
+    {
+      "mZ": 804.4469,
+      "intensity": 2.6
+    },
+    {
+      "mZ": 805.3883,
+      "intensity": 1.6
+    },
+    {
+      "mZ": 809.254,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 813.4462,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 817.4571,
+      "intensity": 16
+    },
+    {
+      "mZ": 818.4602,
+      "intensity": 5.2
+    },
+    {
+      "mZ": 819.4636,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 825.4614,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 826.4654,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 827.4538,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 829.4836,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 830.4854,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 831.3987,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 840.4153,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 845.3979,
+      "intensity": 1.5
+    },
+    {
+      "mZ": 846.4034,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 846.5461,
+      "intensity": 6.2
+    },
+    {
+      "mZ": 847.549,
+      "intensity": 2.6
+    },
+    {
+      "mZ": 864.5541,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 870.5216,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 876.4267,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 877.9706,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 878.5369,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 880.4431,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 888.53,
+      "intensity": 2.9
+    },
+    {
+      "mZ": 889.5317,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 892.5509,
+      "intensity": 7.6
+    },
+    {
+      "mZ": 893.5534,
+      "intensity": 3.3
+    },
+    {
+      "mZ": 898.5155,
+      "intensity": 5.3
+    },
+    {
+      "mZ": 899.5165,
+      "intensity": 2.7
+    },
+    {
+      "mZ": 902.4215,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 912.4938,
+      "intensity": 1.9
+    },
+    {
+      "mZ": 913.5008,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 916.5259,
+      "intensity": 36.6
+    },
+    {
+      "mZ": 917.5282,
+      "intensity": 14.2
+    },
+    {
+      "mZ": 918.5333,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 926.5359,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 930.4048,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 957.5749,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 958.5882,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 959.4481,
+      "intensity": 1
+    },
+    {
+      "mZ": 963.4608,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 975.5884,
+      "intensity": 6.7
+    },
+    {
+      "mZ": 976.5911,
+      "intensity": 3.6
+    },
+    {
+      "mZ": 977.5928,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 978.5058,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 983.6039,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 987.0255,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 987.6002,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 988.6046,
+      "intensity": 1
+    },
+    {
+      "mZ": 995.4904,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 996.4948,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 997.5883,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 1002.4842,
+      "intensity": 2
+    },
+    {
+      "mZ": 1003.4899,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 1011.5983,
+      "intensity": 3.6
+    },
+    {
+      "mZ": 1012.5975,
+      "intensity": 1.6
+    },
+    {
+      "mZ": 1013.543,
+      "intensity": 2.5
+    },
+    {
+      "mZ": 1014.5447,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 1015.5948,
+      "intensity": 27.9
+    },
+    {
+      "mZ": 1016.5977,
+      "intensity": 14.3
+    },
+    {
+      "mZ": 1017.5952,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 1029.6096,
+      "intensity": 3.8
+    },
+    {
+      "mZ": 1030.484,
+      "intensity": 2.3
+    },
+    {
+      "mZ": 1030.6084,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 1031.491,
+      "intensity": 1
+    },
+    {
+      "mZ": 1031.6217,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 1032.4818,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 1039.6178,
+      "intensity": 1.7
+    },
+    {
+      "mZ": 1040.6277,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 1050.4901,
+      "intensity": 3.2
+    },
+    {
+      "mZ": 1051.4973,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 1059.509,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 1060.5125,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 1087.5112,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 1088.5067,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 1088.672,
+      "intensity": 4.9
+    },
+    {
+      "mZ": 1089.676,
+      "intensity": 3.6
+    },
+    {
+      "mZ": 1092.7739,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 1098.6593,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 1100.683,
+      "intensity": 1.1
+    },
+    {
+      "mZ": 1101.691,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 1107.5917,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 1128.6788,
+      "intensity": 11.8
+    },
+    {
+      "mZ": 1129.6798,
+      "intensity": 6.8
+    },
+    {
+      "mZ": 1130.4912,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 1130.6853,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 1142.6851,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 1146.2189,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 1149.5562,
+      "intensity": 4
+    },
+    {
+      "mZ": 1150.5586,
+      "intensity": 3
+    },
+    {
+      "mZ": 1151.5667,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 1158.6716,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 1160.6117,
+      "intensity": 1
+    },
+    {
+      "mZ": 1161.6194,
+      "intensity": 0.9
+    },
+    {
+      "mZ": 1163.578,
+      "intensity": 1.3
+    },
+    {
+      "mZ": 1167.7206,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 1168.7201,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 1176.6823,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 1177.5525,
+      "intensity": 2.6
+    },
+    {
+      "mZ": 1177.6803,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 1178.55,
+      "intensity": 1.8
+    },
+    {
+      "mZ": 1179.5555,
+      "intensity": 0.3
+    },
+    {
+      "mZ": 1185.7253,
+      "intensity": 30.9
+    },
+    {
+      "mZ": 1186.7278,
+      "intensity": 18.4
+    },
+    {
+      "mZ": 1187.7351,
+      "intensity": 2.5
+    },
+    {
+      "mZ": 1206.5771,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 1207.579,
+      "intensity": 0.6
+    },
+    {
+      "mZ": 1222.6198,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 1231.6365,
+      "intensity": 0.4
+    },
+    {
+      "mZ": 1234.592,
+      "intensity": 0.5
+    },
+    {
+      "mZ": 1235.5745,
+      "intensity": 0.7
+    },
+    {
+      "mZ": 1241.7684,
+      "intensity": 2.1
+    },
+    {
+      "mZ": 1242.7723,
+      "intensity": 1.2
+    },
+    {
+      "mZ": 1288.6672,
+      "intensity": 1.4
+    },
+    {
+      "mZ": 1289.6685,
+      "intensity": 1
+    },
+    {
+      "mZ": 1322.7939,
+      "intensity": 1.1
+    },
+    {
+      "mZ": 1323.7919,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 1385.7195,
+      "intensity": 1.9
+    },
+    {
+      "mZ": 1386.7281,
+      "intensity": 0.8
+    },
+    {
+      "mZ": 1440.7303,
+      "intensity": 2.5
+    },
+    {
+      "mZ": 1441.7297,
+      "intensity": 2.6
+    }
+  ],
+  "toleranceType": "ppm",
+  "tolerance": 10,
+  "matchingType": "% Base Peak",
+  "cutoff": 0
+}

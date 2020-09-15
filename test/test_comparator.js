@@ -10,10 +10,12 @@ chai.use(chaiAlmost(0.00001));
 const { expect } = chai;
 
 describe('Comparator', () => {
-  let spectrum_1 = {};
-  let spectrum_2 = {};
-  let spectrum_3 = {};
-  let spectrum_4 = {};
+  var spectrum_1 = {};
+  var spectrum_2 = {};
+  var spectrum_3 = {};
+  var spectrum_4 = {};
+	var spectrum_5;
+	var spectrum_6;
   beforeEach(() => {
     spectrum_1 = [{ mz: 1019.74, intensity: 1000 },
       { mz: 326.1, intensity: 122095.0 },
@@ -39,6 +41,13 @@ describe('Comparator', () => {
       { mz: 354.1, intensity: 9004638.0 }];
 
     spectrum_4 = [{ mz: 1019.74, intensity: 1000 }];
+    spectrum_5 = [{ mz: 303.177531167, intensity: 0.005209959952750007 },
+	    {mz: 175.118951167, intensity:0.055890403065487336},
+	    {mz: 229.118276467, intensity:0.36732187617044565},
+    ];
+    spectrum_6 = [{ mz: 170.085083, intensity: 244.5962677002 },
+	    {mz: 173.1585693, intensity:174.1443939209},
+];
   });
   /*
 	    it('scores', () => {
@@ -66,17 +75,41 @@ describe('Comparator', () => {
 		    const scores_exp = {
 			    full: {
 			    sa: 0, // 0.0000706871,
-			    corr: 0.33, // 0.3275740,
+			    corr: -0.34, // 0.3275740,
 		    },
 			    spec1: {
 			    sa: 1,
-			    corr: 1,
+			    corr: NaN,
 		    },
 			    spec2: {
 			    sa: 0, // 0.0000706871,
-			    corr: 0.33, // 0.3275740,
+			    corr: -0.34, // 0.3275740,
 		    },
 		    };
-	      expect(scores).to.almost.eql(scores_exp);
+	      expect(scores["full"]).to.almost.eql(scores_exp["full"]);
+	      expect(scores["spec2"]).to.almost.eql(scores_exp["spec2"]);
+	      expect(scores["spec1"].corr).to.be.NaN;
 	    });
+	it('scores3', () =>{
+		    const comparatator = new Comparator(spectrum_5, spectrum_6);
+		    const scores = comparatator.calculate_scores();
+		    const scores_exp = {
+			    full: {
+			    sa: 0, // 0.0000706871,
+			    corr: -0.48, // 0.3275740,
+		    },
+			    spec1: {
+			    sa: 0,
+			    corr: NaN,
+		    },
+			    spec2: {
+			    sa: 0, // 0.0000706871,
+			    corr: NaN // 0.3275740,
+		    },
+		    };
+	      // expect(scores).to.almost.eql(scores_exp);
+	      expect(scores["full"]).to.almost.eql(scores_exp["full"]);
+	      expect(scores["spec1"].corr).to.be.NaN;
+	      expect(scores["spec2"].corr).to.be.NaN;
+	});
 });
