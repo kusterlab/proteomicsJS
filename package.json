@@ -10,7 +10,7 @@
     "g": "^2.0.1",
     "jstat": "^1.9.2",
     "lodash": "^4.17.15",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-fetch-polyfill": "^2.0.6",
     "nyc": "^15.0.0",
     "uniq": "^1.0.1",
