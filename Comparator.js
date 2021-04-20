@@ -2,7 +2,7 @@ const binary = require('./binary');
 const measures = require('./measures');
 
 Comparator = class Comparator {
-  constructor(spectrum_1, spectrum_2, matching_type = "ppm", matching_tolerance = 10) {
+  constructor(spectrum_1, spectrum_2, matching_type = 'ppm', matching_tolerance = 10) {
     this.spectrum_1 = spectrum_1;
     this.spectrum_2 = spectrum_2;
     this.matching_tolerance = matching_tolerance;

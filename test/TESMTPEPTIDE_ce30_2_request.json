@@ -1,0 +1,178 @@
+{
+  "sequence": "TESMTPEPTIDE",
+  "precursorCharge": 2,
+  "charge": 2,
+  "fragmentTypes": {
+    "a": {
+      "selected": false,
+      "color": "#820cad",
+      "label": "a"
+    },
+    "b": {
+      "selected": true,
+      "color": "#0d75bc",
+      "label": "b"
+    },
+    "c": {
+      "selected": false,
+      "color": "#07a14a",
+      "label": "c"
+    },
+    "C": {
+      "selected": false,
+      "color": "#035729",
+      "label": "c-1"
+    },
+    "x": {
+      "selected": false,
+      "color": "#d1e02d",
+      "label": "x"
+    },
+    "y": {
+      "selected": true,
+      "color": "#be202d",
+      "label": "y"
+    },
+    "z": {
+      "selected": false,
+      "color": "#f79420",
+      "label": "z•"
+    },
+    "Z": {
+      "selected": false,
+      "color": "#A16016",
+      "label": "z+1"
+    },
+    "H2O": {
+      "selected": false
+    },
+    "NH3": {
+      "selected": false
+    },
+    "HPO3": {
+      "selected": false
+    },
+    "CO2": {
+      "selected": false
+    },
+    "precursor": {
+      "selected": true,
+      "color": "#666666"
+    },
+    "unassigned": {
+      "selected": true,
+      "color": "#a6a6a6"
+    }
+  },
+  "peakData": [
+    {
+      "mZ": 102.054956467,
+      "intensity": 0.004452799883518294
+    },
+    {
+      "mZ": 148.060431167,
+      "intensity": 0.377214631194347
+    },
+    {
+      "mZ": 231.09754646699997,
+      "intensity": 0.23891035003662808
+    },
+    {
+      "mZ": 263.087371167,
+      "intensity": 1
+    },
+    {
+      "mZ": 318.129576467,
+      "intensity": 0.0780013377195976
+    },
+    {
+      "mZ": 332.136346467,
+      "intensity": 0.008581698721886277
+    },
+    {
+      "mZ": 376.17143116700004,
+      "intensity": 0.10044317649253563
+    },
+    {
+      "mZ": 396.657641467,
+      "intensity": 0.015958676294607718
+    },
+    {
+      "mZ": 445.18402146700004,
+      "intensity": 0.026622440018746276
+    },
+    {
+      "mZ": 465.164976467,
+      "intensity": 0.10766822733953053
+    },
+    {
+      "mZ": 477.21911116700005,
+      "intensity": 0.010529491257046917
+    },
+    {
+      "mZ": 495.70786146700004,
+      "intensity": 0.017160758405110638
+    },
+    {
+      "mZ": 552.249891467,
+      "intensity": 0.0121175555221884
+    },
+    {
+      "mZ": 566.212656467,
+      "intensity": 0.24418751734712918
+    },
+    {
+      "mZ": 574.271871167,
+      "intensity": 0.6301523817323924
+    },
+    {
+      "mZ": 609.763361467,
+      "intensity": 0.004326822187945054
+    },
+    {
+      "mZ": 663.265416467,
+      "intensity": 0.03769211518948753
+    },
+    {
+      "mZ": 703.314461167,
+      "intensity": 0.00505193901090651
+    },
+    {
+      "mZ": 792.308006467,
+      "intensity": 0.45273754760507245
+    },
+    {
+      "mZ": 800.367221167,
+      "intensity": 0.19462955632300014
+    },
+    {
+      "mZ": 901.414901167,
+      "intensity": 0.009338465808524096
+    },
+    {
+      "mZ": 990.4084464670001,
+      "intensity": 0.13310992506040215
+    },
+    {
+      "mZ": 1103.492506467,
+      "intensity": 0.11402649048808566
+    },
+    {
+      "mZ": 1218.519446467,
+      "intensity": 0.030117846726454546
+    }
+  ],
+  "mods": [
+    {
+      "name": "Oxidation",
+      "site": "M",
+      "index": 3,
+      "elementChange": "O1",
+      "$$hashKey": "object:718"
+    }
+  ],
+  "toleranceType": "ppm",
+  "tolerance": 10,
+  "matchingType": "% Base Peak",
+  "cutoff": 0
+}

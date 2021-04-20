@@ -1,0 +1,2284 @@
+{
+  "aminoAcids": [
+    {
+      "mass": 101.04768,
+      "modification": {
+        "site": 0,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "T"
+    },
+    {
+      "mass": 129.04259,
+      "modification": {
+        "site": 1,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "E"
+    },
+    {
+      "mass": 87.032029,
+      "modification": {
+        "site": 2,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "S"
+    },
+    {
+      "mass": 147.03539461957,
+      "modification": {
+        "site": 3,
+        "deltaElement": "O1",
+        "deltaMass": 15.99491461957
+      },
+      "name": "M"
+    },
+    {
+      "mass": 101.04768,
+      "modification": {
+        "site": 4,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "T"
+    },
+    {
+      "mass": 97.052764,
+      "modification": {
+        "site": 5,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "P"
+    },
+    {
+      "mass": 129.04259,
+      "modification": {
+        "site": 6,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "E"
+    },
+    {
+      "mass": 97.052764,
+      "modification": {
+        "site": 7,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "P"
+    },
+    {
+      "mass": 101.04768,
+      "modification": {
+        "site": 8,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "T"
+    },
+    {
+      "mass": 113.08406,
+      "modification": {
+        "site": 9,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "I"
+    },
+    {
+      "mass": 115.02694,
+      "modification": {
+        "site": 10,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "D"
+    },
+    {
+      "mass": 129.04259,
+      "modification": {
+        "site": 11,
+        "deltaElement": null,
+        "deltaMass": 0
+      },
+      "name": "E"
+    }
+  ], // pre generatead
+  "precursorMz": 683.28993961868, // calcaultade
+  "precursorMass": 1364.5653263036, // calculated
+  "precursorCharge": 2,
+  "charge": 2,
+  "fragments": [
+    {
+      "charge": 1,
+      "mz": 102.05495646688,
+      "number": 1,
+      "sequence": "T",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 231.09754646688,
+      "number": 2,
+      "sequence": "TE",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 318.12957546688,
+      "number": 3,
+      "sequence": "TES",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 465.16497008645,
+      "number": 4,
+      "sequence": "TESM",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 566.21265008645,
+      "number": 5,
+      "sequence": "TESMT",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 663.26541408645,
+      "number": 6,
+      "sequence": "TESMTP",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 792.30800408645,
+      "number": 7,
+      "sequence": "TESMTPE",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 889.36076808645,
+      "number": 8,
+      "sequence": "TESMTPEP",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 990.40844808645,
+      "number": 9,
+      "sequence": "TESMTPEPT",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 1103.4925080864,
+      "number": 10,
+      "sequence": "TESMTPEPTI",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 1218.5194480864,
+      "number": 11,
+      "sequence": "TESMTPEPTID",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 0,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        }
+      ],
+      "type": "b",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 148.06043115091,
+      "number": 1,
+      "sequence": "E",
+      "subPeptide": [
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 263.08737115091,
+      "number": 2,
+      "sequence": "DE",
+      "subPeptide": [
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 376.17143115091,
+      "number": 3,
+      "sequence": "IDE",
+      "subPeptide": [
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 477.21911115091,
+      "number": 4,
+      "sequence": "TIDE",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 574.27187515091,
+      "number": 5,
+      "sequence": "PTIDE",
+      "subPeptide": [
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 703.31446515091,
+      "number": 6,
+      "sequence": "EPTIDE",
+      "subPeptide": [
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 800.36722915091,
+      "number": 7,
+      "sequence": "PEPTIDE",
+      "subPeptide": [
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 901.41490915091,
+      "number": 8,
+      "sequence": "TPEPTIDE",
+      "subPeptide": [
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 1048.4503037705,
+      "number": 9,
+      "sequence": "MTPEPTIDE",
+      "subPeptide": [
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 1135.4823327705,
+      "number": 10,
+      "sequence": "SMTPEPTIDE",
+      "subPeptide": [
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    },
+    {
+      "charge": 1,
+      "mz": 1264.5249227705,
+      "number": 11,
+      "sequence": "ESMTPEPTIDE",
+      "subPeptide": [
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 1,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 87.032029,
+          "modification": {
+            "site": 2,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "S"
+        },
+        {
+          "mass": 147.03539461957,
+          "modification": {
+            "site": 3,
+            "deltaElement": "O1",
+            "deltaMass": 15.99491461957
+          },
+          "name": "M"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 4,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 5,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 6,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        },
+        {
+          "mass": 97.052764,
+          "modification": {
+            "site": 7,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "P"
+        },
+        {
+          "mass": 101.04768,
+          "modification": {
+            "site": 8,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "T"
+        },
+        {
+          "mass": 113.08406,
+          "modification": {
+            "site": 9,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "I"
+        },
+        {
+          "mass": 115.02694,
+          "modification": {
+            "site": 10,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "D"
+        },
+        {
+          "mass": 129.04259,
+          "modification": {
+            "site": 11,
+            "deltaElement": null,
+            "deltaMass": 0
+          },
+          "name": "E"
+        }
+      ],
+      "type": "y",
+      "neutralLoss": null
+    }
+  ],
+  "fragTypes": {
+    "a": {
+      "selected": false,
+      "color": "#820cad",
+      "label": "a"
+    },
+    "b": {
+      "selected": true,
+      "color": "#0d75bc",
+      "label": "b"
+    },
+    "c": {
+      "selected": false,
+      "color": "#07a14a",
+      "label": "c"
+    },
+    "C": {
+      "selected": false,
+      "color": "#035729",
+      "label": "c-1"
+    },
+    "x": {
+      "selected": false,
+      "color": "#d1e02d",
+      "label": "x"
+    },
+    "y": {
+      "selected": true,
+      "color": "#be202d",
+      "label": "y"
+    },
+    "z": {
+      "selected": false,
+      "color": "#f79420",
+      "label": "z•"
+    },
+    "Z": {
+      "selected": false,
+      "color": "#A16016",
+      "label": "z+1"
+    },
+    "H2O": {
+      "selected": false
+    },
+    "NH3": {
+      "selected": false
+    },
+    "HPO3": {
+      "selected": false
+    },
+    "CO2": {
+      "selected": false
+    },
+    "precursor": {
+      "selected": true,
+      "color": "#666666"
+    },
+    "unassigned": {
+      "selected": true,
+      "color": "#a6a6a6"
+    }
+  },
+  "modifications": [
+    {
+      "site": -1,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 0,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 1,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 2,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 3,
+      "deltaElement": "O1",
+      "deltaMass": 15.99491461957
+    },
+    {
+      "site": 4,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 5,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 6,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 7,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 8,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 9,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 10,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 11,
+      "deltaElement": null,
+      "deltaMass": 0
+    },
+    {
+      "site": 12,
+      "deltaElement": null,
+      "deltaMass": 0
+    }
+  ],
+  "peaks": [
+    {
+      "mz": 102.054956467,
+      "intensity": 0.0058706394058644,
+      "percentBasePeak": 0.58706394058644,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 102.05495646688,
+            "number": 1,
+            "sequence": "T",
+            "subPeptide": [
+              {
+                "mass": 101.04768,
+                "modification": {
+                  "site": 0,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "T"
+              }
+            ],
+            "type": "b",
+            "neutralLoss": null
+          },
+          "massError": 0.0000011855496414277
+        }
+      ]
+    },
+    {
+      "mz": 148.060431167,
+      "intensity": 0.42263345436408,
+      "percentBasePeak": 42.263345436408,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 148.06043115091,
+            "number": 1,
+            "sequence": "E",
+            "subPeptide": [
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 11,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              }
+            ],
+            "type": "y",
+            "neutralLoss": null
+          },
+          "massError": 0.00010867845710467
+        }
+      ]
+    },
+    {
+      "mz": 231.097546467,
+      "intensity": 0.23347845751314,
+      "percentBasePeak": 23.347845751314,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 231.09754646688,
+            "number": 2,
+            "sequence": "TE",
+            "subPeptide": [
+              {
+                "mass": 101.04768,
+                "modification": {
+                  "site": 0,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "T"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 1,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              }
+            ],
+            "type": "b",
+            "neutralLoss": null
+          },
+          "massError": 5.2355041797283e-7
+        }
+      ]
+    },
+    {
+      "mz": 263.087371167,
+      "intensity": 1,
+      "percentBasePeak": 100,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 263.08737115091,
+            "number": 2,
+            "sequence": "DE",
+            "subPeptide": [
+              {
+                "mass": 115.02694,
+                "modification": {
+                  "site": 10,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "D"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 11,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              }
+            ],
+            "type": "y",
+            "neutralLoss": null
+          },
+          "massError": 0.000061162435925634
+        }
+      ]
+    },
+    {
+      "mz": 281.612506467,
+      "intensity": 0.012021100773949,
+      "percentBasePeak": 1.2021100773949,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 318.129576467,
+      "intensity": 0.10314355881122,
+      "percentBasePeak": 10.314355881122,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 318.12957546688,
+            "number": 3,
+            "sequence": "TES",
+            "subPeptide": [
+              {
+                "mass": 101.04768,
+                "modification": {
+                  "site": 0,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "T"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 1,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              },
+              {
+                "mass": 87.032029,
+                "modification": {
+                  "site": 2,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "S"
+              }
+            ],
+            "type": "b",
+            "neutralLoss": null
+          },
+          "massError": 0.0031437536596409
+        }
+      ]
+    },
+    {
+      "mz": 346.133801467,
+      "intensity": 0.020818923065868,
+      "percentBasePeak": 2.0818923065868,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 376.171431167,
+      "intensity": 0.058723301730077,
+      "percentBasePeak": 5.8723301730077,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 376.17143115091,
+            "number": 3,
+            "sequence": "IDE",
+            "subPeptide": [
+              {
+                "mass": 113.08406,
+                "modification": {
+                  "site": 9,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "I"
+              },
+              {
+                "mass": 115.02694,
+                "modification": {
+                  "site": 10,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "D"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 11,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              }
+            ],
+            "type": "y",
+            "neutralLoss": null
+          },
+          "massError": 0.000042775881282717
+        }
+      ]
+    },
+    {
+      "mz": 394.660181467,
+      "intensity": 0.049981190215531,
+      "percentBasePeak": 4.9981190215531,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 445.184021467,
+      "intensity": 0.023427396345407,
+      "percentBasePeak": 2.3427396345407,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 465.164976467,
+      "intensity": 0.33258192823539,
+      "percentBasePeak": 33.258192823539,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 465.16497008645,
+            "number": 4,
+            "sequence": "TESM",
+            "subPeptide": [
+              {
+                "mass": 101.04768,
+                "modification": {
+                  "site": 0,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "T"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 1,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              },
+              {
+                "mass": 87.032029,
+                "modification": {
+                  "site": 2,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "S"
+              },
+              {
+                "mass": 147.03539461957,
+                "modification": {
+                  "site": 3,
+                  "deltaElement": "O1",
+                  "deltaMass": 15.99491461957
+                },
+                "name": "M"
+              }
+            ],
+            "type": "b",
+            "neutralLoss": null
+          },
+          "massError": 0.013716748671241
+        }
+      ]
+    },
+    {
+      "mz": 501.726051467,
+      "intensity": 0.013705569809662,
+      "percentBasePeak": 1.3705569809662,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 559.239521467,
+      "intensity": 0.006896216485825,
+      "percentBasePeak": 0.6896216485825,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 562.217736467,
+      "intensity": 0.036716741553561,
+      "percentBasePeak": 3.6716741553561,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 574.271871167,
+      "intensity": 0.42571825901707,
+      "percentBasePeak": 42.571825901707,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 574.27187515091,
+            "number": 5,
+            "sequence": "PTIDE",
+            "subPeptide": [
+              {
+                "mass": 97.052764,
+                "modification": {
+                  "site": 7,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "P"
+              },
+              {
+                "mass": 101.04768,
+                "modification": {
+                  "site": 8,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "T"
+              },
+              {
+                "mass": 113.08406,
+                "modification": {
+                  "site": 9,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "I"
+              },
+              {
+                "mass": 115.02694,
+                "modification": {
+                  "site": 10,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "D"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 11,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              }
+            ],
+            "type": "y",
+            "neutralLoss": null
+          },
+          "massError": -0.0069373223177671
+        }
+      ]
+    },
+    {
+      "mz": 691.260326467,
+      "intensity": 0.47157186394397,
+      "percentBasePeak": 47.157186394397,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 788.313086467,
+      "intensity": 0.0066905769320185,
+      "percentBasePeak": 0.66905769320185,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 800.367221167,
+      "intensity": 0.10650184504965,
+      "percentBasePeak": 10.650184504965,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 800.36722915091,
+            "number": 7,
+            "sequence": "PEPTIDE",
+            "subPeptide": [
+              {
+                "mass": 97.052764,
+                "modification": {
+                  "site": 5,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "P"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 6,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              },
+              {
+                "mass": 97.052764,
+                "modification": {
+                  "site": 7,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "P"
+              },
+              {
+                "mass": 101.04768,
+                "modification": {
+                  "site": 8,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "T"
+              },
+              {
+                "mass": 113.08406,
+                "modification": {
+                  "site": 9,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "I"
+              },
+              {
+                "mass": 115.02694,
+                "modification": {
+                  "site": 10,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "D"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 11,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              }
+            ],
+            "type": "y",
+            "neutralLoss": null
+          },
+          "massError": -0.0099753071857208
+        }
+      ]
+    },
+    {
+      "mz": 889.360766467,
+      "intensity": 0.20833040971515,
+      "percentBasePeak": 20.833040971515,
+      "sn": null,
+      "matchedFeatures": [
+        {
+          "feature": {
+            "charge": 1,
+            "mz": 889.36076808645,
+            "number": 8,
+            "sequence": "TESMTPEP",
+            "subPeptide": [
+              {
+                "mass": 101.04768,
+                "modification": {
+                  "site": 0,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "T"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 1,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              },
+              {
+                "mass": 87.032029,
+                "modification": {
+                  "site": 2,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "S"
+              },
+              {
+                "mass": 147.03539461957,
+                "modification": {
+                  "site": 3,
+                  "deltaElement": "O1",
+                  "deltaMass": 15.99491461957
+                },
+                "name": "M"
+              },
+              {
+                "mass": 101.04768,
+                "modification": {
+                  "site": 4,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "T"
+              },
+              {
+                "mass": 97.052764,
+                "modification": {
+                  "site": 5,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "P"
+              },
+              {
+                "mass": 129.04259,
+                "modification": {
+                  "site": 6,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "E"
+              },
+              {
+                "mass": 97.052764,
+                "modification": {
+                  "site": 7,
+                  "deltaElement": null,
+                  "deltaMass": 0
+                },
+                "name": "P"
+              }
+            ],
+            "type": "b",
+            "neutralLoss": null
+          },
+          "massError": -0.0018209134611879
+        }
+      ]
+    },
+    {
+      "mz": 1002.444826467,
+      "intensity": 0.13758744436319,
+      "percentBasePeak": 13.758744436319,
+      "sn": null,
+      "matchedFeatures": []
+    },
+    {
+      "mz": 1117.471766467,
+      "intensity": 0.03729819637415,
+      "percentBasePeak": 3.729819637415,
+      "sn": null,
+      "matchedFeatures": []
+    }
+  ],
+  "basePeak": {
+    "mZ": 263.087371167,
+    "intensity": 1
+  },
+  "sequence": "TESMTPEPTIDE",
+  "tolerance": 10,
+  "matchType": "% Base Peak",
+  "cutoff": 0,
+  "isPPM": true,
+  "annotationTime": null,
+  "checkVar": null
+}

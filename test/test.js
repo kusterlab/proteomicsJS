@@ -65,10 +65,10 @@ describe('Similarities', () => {
       expect(1).to.be.almost(compf(comparison.intensity_1, comparison.intensity_2));
     });
     it('should return 0 when spectrum is not the same', () => {
-	// R cor(c(1,0,0), c(0,0,1))
+      // R cor(c(1,0,0), c(0,0,1))
       const compf = compare.ipsa_helper.comparison.pearson_correlation;
-	    var spec1 = [0,0,1];
-	    var spec2 = [1,0,0];
+	    const spec1 = [0, 0, 1];
+	    const spec2 = [1, 0, 0];
       expect(-0.5).to.be.almost(compf(spec1, spec2));
     });
 

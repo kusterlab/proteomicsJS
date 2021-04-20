@@ -244,7 +244,6 @@ grouping_f = function (list_o) {
 };
 // second element of ever elment is the list of objects. first element just the grouping key
 
-
 const ipsa_helper = {
   comparison: {
     // https://brenocon.com/blog/2012/03/cosine-similarity-pearson-correlation-and-ols-coefficients/
@@ -290,7 +289,7 @@ const ipsa_helper = {
       if (isNaN(dot_help)) {
         return (0);
       }
-      dot_help = dot_help > 1? 1 : dot_help;
+      dot_help = dot_help > 1 ? 1 : dot_help;
       return (1 - 2 * Math.acos(dot_help) / Math.PI);
     },
     pearson_correlation(spectrum_1, spectrum_2) {
@@ -324,14 +323,14 @@ const ipsa_helper = {
         ysum += Math.pow((spectrum_2[n] - yavg), 2);
       }
       // return (sum / Math.sqrt(xsum * ysum));
-      const result =  (sum / Math.sqrt(xsum * ysum));
+      const result = (sum / Math.sqrt(xsum * ysum));
       return result;
     },
   },
 
 };
 // will return function f(ary1) => ary2
-const regressionThroughZero = function (ary1, ary2) {
+regressionThroughZero = function (ary1, ary2) {
   const maxAry1 = ary1.reduce((prev, current) => ((prev > current) ? prev : current)); // returns object
   const maxAry2 = ary2.reduce((prev, current) => ((prev > current) ? prev : current)); // returns object
 
