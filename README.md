@@ -2,6 +2,10 @@
 
 We use [nvm](https://github.com/nvm-sh/nvm) for the local development of ProteomicsJS.
 
+### Features
+- parsing of USI and extracting ProForma sequence
+- Annotation of spectra
+
 ## Prerequisite
 The node version is controlled by .nvmrc and the following has to be executed once
 ```

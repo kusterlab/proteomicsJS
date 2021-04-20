@@ -265,22 +265,20 @@ compare_ppm_FACTORY = function (property) {
  * type ppm/Da
  * value e.g. 10
  */
-compare_FACTORY = function (property, type="ppm", value=10) {
+compare_FACTORY = function (property, type = 'ppm', value = 10) {
   return function (peak1, peak2) {
     // asking if peak2 is close to peak1
-    var error;
-    switch(type) {
-	    case "ppm":
+    let error;
+    switch (type) {
+	    case 'ppm':
 		    error = 1 / Math.pow(10, 6) * value * peak1[property];
 		    break;
-	   case "Da":
+	   case 'Da':
 		    error = value;
 		    break;
-           default:
+      default:
 		    error = 1;
-		    throw "Error";
-
-
+		    throw 'Error';
     }
     return (peak2.mz <= (peak1[property] + error) && peak2.mz >= (peak1[property] - error));
   };
@@ -291,7 +289,7 @@ exports.my_sorter = my_sorter;
 exports.compare_ppm_FACTORY = compare_ppm_FACTORY;
 exports.compare_FACTORY = compare_FACTORY;
 
-generate_searchF = function (spectrum, type="ppm", value=10) {
+generate_searchF = function (spectrum, type = 'ppm', value = 10) {
   return function (peak) {
     getClosestValues_spec2F = getClosestValues_spec2_FACTORY('mz_2');
     a = getClosestValues_spec2F(spectrum, peak.mz);
@@ -323,7 +321,7 @@ extract_mzs = function (prev, peak) {
 /**
  * solves question of specrum_2 is how much part of 1
  */
-binary_search_spectrum = function (spectrum_1, spectrum_2, type="ppm", value=10) {
+binary_search_spectrum = function (spectrum_1, spectrum_2, type = 'ppm', value = 10) {
   const sorter_asc_mz = my_sorter('mz', 'asc');
   spectrum_2 = spectrum_2.sort(sorter_asc_mz);
   spectrum_2 = spectrum_2.map((peak, i) => ({
