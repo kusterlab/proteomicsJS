@@ -19,22 +19,21 @@ describe('Annotate complex spectrum with modifications', () => {
     response = require('./TESMTPEPTIDE_ce30_2_response.json');
     request = require('./TESMTPEPTIDE_ce30_2_request.json');
   });
-	it('peaks_1234_y', () => {
-		expect(request.fragmentTypes.y.selected).to.almost.eql(true);
-		const annotation = new AnnotationTransformer.Annotation(request);
-		const t1 = annotation.fakeAPI();
-		expect(t1.fragments).to.almost.eql(1);
-		expect(a).to.almost.eql(b);
-		var a = t1.fragments.filter((e) => e.number === 11)
-			.filter((e) => e.neutralLoss === '-CO2')
-			.filter((e) => e.charge === 1)
-			.filter((e) => e.type === 'y');
-		var b = response.fragments.filter((e) => e.number === 11)
-			.filter((e) => e.neutralLoss === '-CO2')
-			.filter((e) => e.charge === 1)
-			.filter((e) => e.type === 'y');
-		expect(a).to.almost.eql(b);
-	});
+  it('peaks_1234_y_more', () => {
+    expect(request.fragmentTypes.y.selected).to.almost.eql(true);
+    const annotation = new AnnotationTransformer.Annotation(request);
+    const t1 = annotation.fakeAPI();
+    expect(a).to.almost.eql(b);
+    var a = t1.fragments.filter((e) => e.number === 11)
+      .filter((e) => e.neutralLoss === '-CO2')
+      .filter((e) => e.charge === 1)
+      .filter((e) => e.type === 'y');
+    var b = response.fragments.filter((e) => e.number === 11)
+      .filter((e) => e.neutralLoss === '-CO2')
+      .filter((e) => e.charge === 1)
+      .filter((e) => e.type === 'y');
+    expect(a).to.almost.eql(b);
+  });
 });
 
 describe('Annotate complex spectrum', () => {
@@ -136,7 +135,7 @@ describe('Annotate complex spectrum', () => {
 	    	.filter((e) => e.type === 'a');
     expect(a).to.almost.eql(b);
   });
-  it('peaks_1234_y', () => {
+  it('peaks_1234_y_2', () => {
     expect(request.fragmentTypes.x.selected).to.almost.eql(true);
     const annotation = new AnnotationTransformer.Annotation(request);
 	  const t1 = annotation.fakeAPI();
