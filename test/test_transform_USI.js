@@ -16,6 +16,39 @@ function transformIsPPM(json) {
   return json;
 }
 
+describe('Parse new USI endpoints', () => {
+  describe('Parse PeptideAtlas', () => {
+    let response = {};
+    response = require('./PROXI.json');
+    it('Test', () => {
+      const jPost = new UsiParser.UsiResponse('ProteomeCentral');
+      jPost.parseData(response);
+      const modifications = [
+        {
+          aminoAcids: 'N-terminus',
+          name: 'iTRAQ4plex',
+          position: -1,
+        },
+        {
+          aminoAcids: 'C-terminus',
+          name: 'TESTEND',
+          position: -110588,
+        },
+        {
+          aminoAcids: 'M',
+          name: 'Oxidation',
+          position: 5,
+        },
+      ];
+      assert.deepEqual(jPost.modifications, modifications);
+
+      assert.deepEqual(jPost.sequence, 'LHFFMPGFAPLTSR');
+      assert.deepEqual(jPost.precursorCharge, 2);
+      assert.deepEqual(jPost.aMz.length, 179);
+    });
+  });
+});
+
 // https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/ShowObservedSpectrum?USI=mzspec:PXD000561:Adult_Frontalcortex_bRP_Elite_85_f09:scan:17555:VLHPLEGAVVIIFK/2
 describe('Parse USI endpoints', () => {
   describe('PeptideAtlas', () => {
@@ -2177,7 +2210,17 @@ describe('Parse USI endpoints', () => {
       assert.deepEqual(peptideatlas.aMz[0], 110.0712);
     });
   }); // end of describe peptide atlas
-
+  describe('Massive',
+    () => {
+      const response = '';
+      it('Massive test', () => {
+        const jPost = new UsiParser.UsiResponse('jpost');
+        jPost.parseData(response);
+        assert.deepEqual(jPost.sequence, 'LETGQFLTFR');
+        assert.deepEqual(jPost.precursorCharge, 2);
+        assert.deepEqual(jPost.aMz.length, 458);
+      });
+    });
   describe('jPost', () => {
     let response = '';
     beforeEach(() => {

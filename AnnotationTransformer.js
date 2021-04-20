@@ -54,7 +54,23 @@ this.B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
 		Y: 163.06333,
 	};
 
-		this.peakData = request["peakData"].map((el, i) =>{
+		this.peakData = request["peakData"].sort(function(a,b){
+			return a.mZ < b.mZ
+		}).reduce((p,n) => {
+			if (p.length === 0) {
+				return(p.concat(n));
+			}
+
+			if (p[p.length - 1].mZ === n.mZ) {
+				var pp = p;
+				pp[pp.length - 1].intensity = pp[pp.length - 1].intensity + n.intensity;
+				return(pp);
+			} else {
+				return(p.concat(n));
+			}
+		}, []);
+
+		this.peakData = this.peakData.map((el, i) =>{
 			return {"mz": el["mZ"],
 				"intensity": el["intensity"],
 			}
@@ -170,10 +186,11 @@ this.B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
 
 	}
 	generateAminoAcids(sequence, mods){
-		var r = sequence.split(""); // 
+		var r = sequence.split(""); //
+		var that = this;
 		r = r.map((e, i) => {
 			let possibleMod = mods.filter(e => {return e.index ==i});
-			let m = this.calculateAllMassOffset(possibleMod) ;
+			let m = that.calculateAllMassOffset(possibleMod) ;
 
 
 			return(
@@ -190,7 +207,15 @@ this.B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
 		return(r);
 	}
 	calculateAllMassOffset(aMods) {
-		return aMods.map((Mod) => this.calculateMassOfElementChange(Mod.elementChange)).reduce((a, b) => a + b, 0);
+		var that = this;
+		return aMods.map(function (Mod) {
+				if(Mod.hasOwnProperty("elementChange")){
+                        return that.calculateMassOfElementChange(Mod.elementChange);
+                    }else{
+                        return Mod.deltaMass;
+                    }
+			}
+		).reduce((a, b) => a + b, 0);
 	}
 	calculateMassOfElementChange(str) {
 		/*
@@ -334,7 +359,7 @@ this.B_ION_TERMINUS = this.ChemistryConstants.Proton; // wiki
 					element["sequence"] = subPeptideSub;
 					element["number"] = i + 1;
 					element["charge"] = c;
-					var allowedMods = frag.reverse? mods.filter((m) => { return m.index >= i + 1; }) : mods.filter((m) => {return m.index <= i+1;});
+					var allowedMods = frag.reverse? mods.filter((m) => { return m.index >= lengthPeptide -i -1; }) : mods.filter((m) => {return m.index < i+1;});
 					const modMass = this.calculateAllMassOffset(allowedMods);
 					element["mz"] = (subPeptideMass + 
 						modMass + 
