@@ -1,4 +1,5 @@
-# ProteomicsJS
+# ProteomicJs
+[![NPM](https://nodei.co/npm/proteomicjs.png?mini=true)](https://npmjs.org/package/proteomicjs)
 
 We use [nvm](https://github.com/nvm-sh/nvm) for the local development of ProteomicsJS.
 
