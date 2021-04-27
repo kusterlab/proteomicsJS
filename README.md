@@ -1,5 +1,6 @@
 # ProteomicJs
 [![NPM](https://nodei.co/npm/proteomicjs.png?mini=true)](https://npmjs.org/package/proteomicjs)
+[![DOI](https://zenodo.org/badge/291287157.svg)](https://zenodo.org/badge/latestdoi/291287157)
 
 We use [nvm](https://github.com/nvm-sh/nvm) for the local development of ProteomicsJS.
 
