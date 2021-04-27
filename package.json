@@ -1,5 +1,5 @@
 {
-  "name": "eubic",
+  "name": "proteomicjs",
   "version": "1.0.0",
   "description": "",
   "main": "test.js",
@@ -32,5 +32,5 @@
     "browserify": "browserify UsiParser.js AnnotationTransformer.js measures.js binary.js Comparator.js USI.js -o bundle.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
